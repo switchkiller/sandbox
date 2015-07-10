@@ -2,6 +2,9 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
+
+
 using namespace std;
 struct Node
 {
@@ -27,7 +30,7 @@ void push(struct Node** root, int data)
   Node* node=newNode(data);
   node->next=*root;
   *root=node;
-  cout<<data;
+  cout<<data<<endl;
 }
 
 int pop(struct Node** root)
@@ -42,7 +45,7 @@ int pop(struct Node** root)
 
 int peek(struct Node* root)
 {
-  if(isEmpty(*root))
+  if(isEmpty(root))
     return 0;
   return root->data;
 }

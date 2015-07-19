@@ -15,7 +15,7 @@ struct stack* createStack(unsigned capacity)
 	stack* Stack=new stack();
 	Stack->capacity=capacity;
 	Stack->top=-1;
-	Stack->arr=(char*)malloc(Stack->capacity* sizeof(int));
+	Stack->arr=(char*)malloc(Stack->capacity* sizeof(char));
 	return Stack;
 }
 
@@ -61,4 +61,3 @@ int main()
 	printf("%s", str);
 	return 0;
 }
-

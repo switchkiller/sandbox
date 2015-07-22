@@ -48,7 +48,7 @@ void MinHeap::insertKey(int k)
 void MinHeap::extractMin()
 {
     if (heap_size<=0)
-      return INT_MAZX;
+      return INT_MAX;
     if (heap_size==1)
     {
       heap_size--;
@@ -59,7 +59,6 @@ void MinHeap::extractMin()
     harr[0]=harr[heap_size-1];
     heap_size--;
     MinHeapify(0);
-
     return root;
 }
 
@@ -77,4 +76,42 @@ void MinHeap::MinHeapify(int i)
     swap(&harr[smallest],&harr[i]);
     MinHeapify(smallest);
   }
+}
+
+void MinHeap::deleteKey(int i){
+  decreaseKey(i,INT_MIN);
+  extract();
+}
+
+void MinHeap::decreaseKey(int i, int new_val){
+  harr[i]=new_val;
+  while(i!=0 && harr[parent(i)]>harr[i])
+  {
+    swap(&harr[i],&harr[parent(i)]);
+    i=parent(i);
+  }
+}
+
+void swap(int *x, int *y)
+{
+  int temp=*x;
+  *x=*y;
+  *y=temp;
+}
+
+int main()
+{
+  MinHeap h(11);
+  h.insertKey(3);
+  h.insertKey(3);
+  h.deleteKey(1);
+  h.insertKey(15);
+  h.insertKey(5);
+  h.insertKey(4);
+  h.insertKey(45);
+  cout<<h.extractMin()<<" ";
+  cout<<h.getMin()<< " ";
+  h.decreaseKey(2,1);
+  cout<<h.getMin();
+  return 0;
 }

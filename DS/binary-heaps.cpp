@@ -44,3 +44,37 @@ void MinHeap::insertKey(int k)
     i=parent(i);
   }
 }
+
+void MinHeap::extractMin()
+{
+    if (heap_size<=0)
+      return INT_MAZX;
+    if (heap_size==1)
+    {
+      heap_size--;
+      return harr[0];
+    }
+
+    int root=harr[0];
+    harr[0]=harr[heap_size-1];
+    heap_size--;
+    MinHeapify(0);
+
+    return root;
+}
+
+void MinHeap::MinHeapify(int i)
+{
+  int l=left(i);
+  int r=right(i);
+  int smallest=i;
+  if (l<heap_size && harr[l]<harr[i])
+    smallest=l;
+  if (r<heap_size && harr[r]<harr[i])
+    smallest=r;
+  if (smallest!=i)
+  {
+    swap(&harr[smallest],&harr[i]);
+    MinHeapify(smallest);
+  }
+}

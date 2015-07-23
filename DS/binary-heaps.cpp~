@@ -98,7 +98,7 @@ void swap(int *x, int *y)
   *x=*y;
   *y=temp;
 }
-//
+
 int main()
 {
   MinHeap h(11);

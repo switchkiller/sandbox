@@ -12,7 +12,7 @@ struct Queue
 
 struct Queue* createQueue(unsigned capacity)
 {
-  struct Queue* queue = (struct Queue*) mallocI(sizeof(struct Queue));
+  struct Queue* queue = (struct Queue*) malloc(sizeof(struct Queue));
   queue->capacity=capacity;
   queue->front=queue->size=0;
   queue->rear=capacity-1;

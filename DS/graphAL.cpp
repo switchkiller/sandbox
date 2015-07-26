@@ -41,7 +41,7 @@ void read_graph(graph* g, bool directed){
     insert_edge(g,x,y,directed);
   }
 }
-
+/*Amazing code begins */
 void insert_edge(graph* g, int x, int y, bool directed){
   edgenode *p;
   p=(edgenode*) malloc(sizeof(edgenode));
@@ -56,4 +56,16 @@ void insert_edge(graph* g, int x, int y, bool directed){
     g->nedges++;
 }
 
-void print_graph(graph* g);
+void print_graph(graph* g){
+  int i;
+  edgenode *p;
+
+  for(i=1;i<=g->nvertices;i++){
+    cout<<" "<<i;
+    p=g->edges[i];
+    while (p!=NULL){
+      cout<<p->y<<" ";
+      p=p->next;
+    }
+  }
+}

@@ -30,7 +30,7 @@ void initiaze_graph(graph* g, bool directed){
 
 void read_graph(graph* g, bool directed){
   int i;
-  int m;
+  int m;  //no of edges in graph
   int x,y;
 
   initiaze_graph(g, directed);
@@ -40,4 +40,18 @@ void read_graph(graph* g, bool directed){
     cin>>x>>y;
     insert_edge(g,x,y,directed);
   }
+}
+
+void insert_edge(graph* g, int x, int y, bool directed){
+  edgenode *p;
+  p=(edgenode*) malloc(sizeof(edgenode));
+  p->weight=NULL;
+  p->y=y;
+  p->next=g->edges[x];
+  g->edges[x]=p;
+  g->degree[x]++;
+  if (directed == FALSE)
+    insert_edge(g,y,x, TRUE);
+  else
+    g->nedges++;
 }

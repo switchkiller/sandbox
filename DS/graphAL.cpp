@@ -8,7 +8,7 @@ using namespace std;
 typedef struct{
   int weight;
   int y;
-  struct edgenode *node;
+  struct edgenode *next;
 }edgenode;
 
 typedef struct{
@@ -47,11 +47,13 @@ void insert_edge(graph* g, int x, int y, bool directed){
   p=(edgenode*) malloc(sizeof(edgenode));
   p->weight=NULL;
   p->y=y;
-  p->next=g->edges[x];
-  g->edges[x]=p;
+  p->next=g->edge[x];
+  g->edge[x]=p;
   g->degree[x]++;
   if (directed == FALSE)
     insert_edge(g,y,x, TRUE);
   else
     g->nedges++;
 }
+
+void print_graph(graph* g);

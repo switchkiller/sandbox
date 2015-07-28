@@ -32,7 +32,7 @@ void bfs(graph *g, int start){
         discovered[y]=TRUE;
         parent[y]=v;
       }
-      p=o->next;
+      p=p->next;
     }
     process_vertex_late(v);
   }
@@ -48,4 +48,14 @@ void process_vertex_early(int v){
 
 process_edge(int x, int y){
   nedges=nedges+1;
+}
+//useful in maze-retract the path.
+void find_path(int start, int end, int parent[]){
+  if ((start==end) || (end==-1))
+    printf("%d\n",start);
+  else{
+    find(start,parent[end],parent);
+    printf("%d\n",end );
+
+  }
 }

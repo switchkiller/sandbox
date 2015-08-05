@@ -99,10 +99,8 @@ void deleteEdge(struct Vertex* vertex){
     }
     edge=edge->nextEdge;
     }
-  }
-
+  free(catchit);
 }
-
 
 struct Vertex* findVertex(int x){
   struct Vertex *locx;
@@ -111,5 +109,21 @@ struct Vertex* findVertex(int x){
   { if (locx->info==x)
       return locx;
     locx=locx->nextVertex;
+  }
+}
+
+void display(){
+  struct Vertex *ptr;
+  struct Edge *q;
+  ptr=start;
+  while (ptr!=NULL){
+    cout<<"->"<<ptr->info;
+    q=ptr->firstEdge;
+    while (q!=NULL){
+      cout<<" "<<q->destVertex->info;
+      q=q->nextEdge;
+    }
+    cout<<endl;
+    ptr=ptr->nextEdge;
   }
 }

@@ -46,14 +46,16 @@ void insertEdge(int u, int v){
 }
 
 void deleteVertex(int u){
+  int flag=0;
   struct Vertex *tmp1, *tmp2;
-  struct Edge *ptr, *tmp;
+//  struct Edge *ptr, *tmp;
   tmp1=start;
   if (start->info==u){
     tmp2=start;
     start=start->nextVertex;
+    flag=1;
   }
-  while (tmp1->nextVertex!=NULL){
+  while ((tmp1->nextVertex!=NULL) && (flag!=1)){
     if (tmp1->nextVertex==u){
       tmp2=tmp1->nextVertex;
       tmp1->nextVertex=tmp1->nextVertex;
@@ -69,7 +71,36 @@ void deleteVertex(int u){
 }
 
 void deleteEdge(struct Vertex* vertex){
-  
+  struct Vertex *tmp,*_tmp;
+  struct Edge *edge, tmpedge, *catchit;
+  int flag=0;
+  edge=vertex->firstEdge;
+  tmp=edge->destVertex;
+  if (tmp==vertex)
+  {  vertex->firstEdge=edge->nextEdge;
+      catchit=edge;
+      flag=1;
+  }
+  while ((edge->nextEdge!=NULL) && (flag!=1)){
+    tmpedge=tmp->firstEdge;
+    _tmp=tmpedge->destVertex;
+    if (tmp==vertex){
+      catchit=tmpedge;
+      tmp->firstEdge=tmpedge->nextEdge;
+      flag=1;
+    }
+    while ((tmpedge->nextEdge!=NULL) && (flag!=1)){
+      if (tmpedge->destVertex==vertex){
+        catchit=tmpedge;
+        tmpedge->nextEdge=tmpedge->nextEdge->nextEdge;
+        flag=1;
+      }
+      tmpedge=tmpedge->nextEdge;
+    }
+    edge=edge->nextEdge;
+    }
+  }
+
 }
 
 

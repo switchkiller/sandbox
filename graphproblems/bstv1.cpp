@@ -20,25 +20,25 @@ Graph::Graph(int V){
   adj = new list<int>[V];
 }
 
-void addEdge(int V, int w){
+void Graph::addEdge(int V, int w){
   adj[V].push_back(w);
 }
 
-void bfs(int s){
-  bool *visited = new visited[V];
+void Graph::bfs(int s){
+  bool *visited = new bool[V];
   for (int i=0; i < V; i++)
-    visited[i] = FALSE;
+    visited[i] = false;
   list<int> queue;
-  visited[s] = TRUE;
+  visited[s] = true;
   queue.push_back(s);
   list<int>::iterator itr;
-  while(!queue.empty){
+  while(!queue.empty()){
     s = queue.front();
     cout<<s<<" ";
     queue.pop_front();
     for(itr=adj[s].begin();itr!=adj[s].end();++itr){
       if (!visited[*itr]){
-        visited[*itr]=TRUE;
+        visited[*itr]=true;
         queue.push_back(*itr);
       }
     }
@@ -57,7 +57,6 @@ int main()
     g.addEdge(3, 3);
 
     cout << "Following is Breadth First Traversal (starting from vertex 2) \n";
-    g.BFS(2);
-
+    g.bfs(2);
     return 0;
 }

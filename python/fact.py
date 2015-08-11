@@ -1,5 +1,3 @@
-__author__="bond007"
-
 def fact(n):
     '''
     >>> fact(4)

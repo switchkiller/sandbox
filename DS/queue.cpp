@@ -34,5 +34,5 @@ void enqueue(struct Queue* queue, int item) {
   /* code */
   if (isFull(queue))
     return;
-  queue->rear=(queue->rear+1)
+  queue->rear=(queue->rear+1);
 }

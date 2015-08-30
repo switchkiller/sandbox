@@ -32,12 +32,11 @@ public:
 */
 }
 LinkedList::LinkedList(){
-  head = NULL;
+  head = tail = NULL;
 }
 
 LinkedList::LinkedList(val){
   head = new node(val);
-  tail = head;
 }
 
 void LinkedList::Print(){
@@ -97,7 +96,7 @@ class node
 {
   int key;
   node *next;
-private:
+public:
   node();
   void node_data(int val);
   void node_next(node* anext);
@@ -126,11 +125,15 @@ node::~node()
 class queue: public node
 {
   qnode *front, *rear;
-private:  
+private:
   void enqueue(int k);
   void
 
 };
+
+void queue::enqueue(int k){
+
+}
 
 queue::queue()
 {

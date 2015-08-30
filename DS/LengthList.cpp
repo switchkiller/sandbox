@@ -14,8 +14,8 @@ void push(struct node** head, int data){
   temp -> next = (*head);
   (*head) = temp;
 }
-
-int getCount(struct node* head){
+//Iterative Solution
+int getCountItr(struct node* head){
   int count = 0;
   struct node* temp = head;
   while (temp != NULL){
@@ -23,6 +23,13 @@ int getCount(struct node* head){
     temp = temp -> next;
   }
   return count;
+}
+
+//Recursive Solution
+int getCountRec(struct node* head){
+  if (head == NULL)
+    return 0;
+  return 1 + getCountRec(head->next);
 }
 
 int main()
@@ -34,5 +41,7 @@ int main()
   push(&head,1);
   push(&head,1);
   push(&head,1);
-  cout<<getCount(head);
+  cout<<getCountItr(head);
+  cout<<getCountRec(head);
+  return 0;
 }

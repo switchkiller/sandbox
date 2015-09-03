@@ -1,3 +1,4 @@
+//Given an integer x, off the binary bit at k position.
 #include<iostream>
 using namespace std;
 int bitoff(int x, int k){

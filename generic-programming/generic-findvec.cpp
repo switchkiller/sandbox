@@ -3,6 +3,7 @@
 #include<vector>
 #include<algorithm>
 #include<cassert>
+#include<string.h>
 #define all(c) c.begin(), c.end()
 using namespace std;
 template <typename Container>
@@ -15,7 +16,7 @@ int main(){
 
   //Search.
   vector<char>::iterator where = find(all(v), 'e');
-  asser(*where == 'e' && *(where + 1) == 't');
+  assert(*where == 'e' && *(where + 1) == 't');
   cout<<"Its all okay.";
   return 0;
 }

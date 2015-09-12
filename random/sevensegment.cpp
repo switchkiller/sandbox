@@ -7,11 +7,12 @@ void bcdto7seg(int num){
   //char a = '_', b = '|';
   int a[7];
   int m,n,o,p;
-  p = (num << 3) % A;
-  o = ((num << 2) & A) % A;
-  n = ((num << 1) & A) % A;
-  m = (num & A) % A;
-  a[0] = ~(n ^ p) | (m & n & o);
+  p = num & 1;
+  o = (num & 2) / 2;
+  n = (num & 4) / 4;
+  m = (num & 8) / 8;
+  cout<<m<<n<<o<<p<<endl;
+  a[0] = (~(n ^ p)) | (m & n & o);
   a[1] = ~(o ^ p) | n;
   a[2] = m | (~o) | n | p;
   a[3] = (~m) & (~p) & (~(n ^ o));

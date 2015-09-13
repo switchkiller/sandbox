@@ -55,3 +55,34 @@ int main(){
     cout << endl;
   }
 }
+
+void BF_Traversal(){
+  int v;
+  for (v = 0; v <= n; v++){
+    state[v] = initial;
+    predecessor[v] = NIL;
+    distance[v] = infinity;
+  }
+  cin >> v;
+  BFS(v);
+  cout << endl;
+}
+
+void BFS(int v){
+  distance[v] = 0;
+  predecessor[v] = NIL;
+  insert_queue(v);
+  state[v] = waiting;
+  while (!isEmpty_queue()){
+      v = delete_queue();
+      state[v] = visited;
+      for (int i = 0; i < n; i++){
+        if (adj[v][i] == 1 && state[i] = initial){
+          insert_queue(i);
+          state = waiting;
+          predecessor[i] = v;
+          distance[i] = distance[v] + 1;
+        }
+      }
+  }
+}

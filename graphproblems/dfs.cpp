@@ -82,7 +82,7 @@ void process_edge(int x, int y){
   }
 }
 
-dfs(graph* g, int v){
+void dfs(graph* g, int v){
   edgenode *p;
   int y;
 

@@ -35,6 +35,9 @@ void BF_Traversal(){
     state[v] = initial;
   cin >> v;
   BFS(v);
+  for (v = 0; v < n; v++)
+    if (state[v] == initial)
+      BFS(v);
 }
 
 void BFS(int v){
@@ -53,4 +56,21 @@ void BFS(int v){
     }
   }
   cout << endl;
+}
+
+void insert_queue(int v){
+    if (rear == MAX -1)
+      cout << "Queue Overflow.";
+    else{
+      if (front == -1)
+        front = 0;
+    }
+      queue[++rear] = v;
+}
+
+void isEmpty_queue(){
+  if (front == -1 || front > rear)
+    return 1;
+  else
+    return 0;
 }

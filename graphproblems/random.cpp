@@ -74,3 +74,13 @@ void isEmpty_queue(){
   else
     return 0;
 }
+
+int delete_queue(){
+  int del;
+  if (front == -1 || front > rear){
+    cout << "Queue Undeflow.";
+    exit(1);
+  }
+  del = queue[front++];
+  return del;
+}

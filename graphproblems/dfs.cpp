@@ -78,4 +78,31 @@ dfs(graph* g, int v){
   edgenode *p;
   int y;
 
+  if (finished) return;
+
+  discovered[v] = TRUE;
+  time = time + 1;
+  entry_time[v] = time;
+
+  process_vertex_early(v);
+
+  p = g->edges[v];
+  while (p != NULL){
+    y = p->y;
+    if (discovered[y] == FALSE){
+      parent[y] = v;
+      process_edge(v,y);
+      dfs(g,y);
+    }
+    else if ((!processed[y]) || (g->directed))
+      process_edge(v,y);
+    if (finished) return;
+
+    p = p->next;
+  }
+
+  process_vertex_late(v);
+  time = time + 1;
+  exit_time[v] = time;
+  processed[v] = TRUE;
 }

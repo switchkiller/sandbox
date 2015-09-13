@@ -74,6 +74,14 @@ void print_graph(graph *g){
   }
 }
 
+void process_edge(int x, int y){
+  if (parent[x] != y){
+    printf("Cycle from %d to %d:", y,x);
+    find_path(y,x,parent);
+    finished = TRUE;
+  }
+}
+
 dfs(graph* g, int v){
   edgenode *p;
   int y;
@@ -106,3 +114,4 @@ dfs(graph* g, int v){
   exit_time[v] = time;
   processed[v] = TRUE;
 }
+//Pause

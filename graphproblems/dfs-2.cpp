@@ -9,7 +9,7 @@ using namespace std;
 #define TRvii (c, it) for (vii::iterator it = (c).begin(); it != (c).end(); it++)
 
 typedef pair<int, int> ii;
-typedef vector<ii> vii;
+typedef vector< ii > vii;
 
 int dfs_num[V];
 

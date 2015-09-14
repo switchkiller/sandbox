@@ -4,7 +4,7 @@
 using namespace std;
 
 typedef pair<int, int> ii;
-typedef vector<ii> vii;
+typedef vector< ii > vii;
 
 #define DFS_WHITE -1
 #define DFS_BLACK 1

@@ -31,10 +31,24 @@ BUT HOW??
  *  Again recursively, the vertex adjacent to the nearby vertex is taken into stack-frame.
 
         void dfs(int u){  //You took an element u to begin the traversal
-          dfs_num[u] = DFS_BLACK;
-          TRvii (AdjList[u], v)
-            if (dfs_num[v->first] == DFS_WHITE)
+          dfs_num[u] = DFS_BLACK; //We mark the visited node BLACK.
+          TRvii (AdjList[u], v) //v is an iterator pointing to ii, where as AdjList is of a vector.
+            if (dfs_num[v->first] == DFS_WHITE) //Self-explanatory
               dfs(v->first);
         } //where v->first is the neighbor of vertex and v->second is the weight of the edge.
 
-  Using STL for solving graphs is very convenient method.  
+  Using STL for solving graphs is very convenient method.
+
+  ###Finding the connected components.
+
+  Dfs is not only useful for traversal. Its much more.
+
+  Lets take a code to go through.
+
+        //inside func()
+        numComponent = 0;
+        REP(i,0,V-1){
+          if (dfs_num[i] == DFS_WHITE)
+            printf("Connected component %d :",++numComponent)
+            dfs(i);
+        }

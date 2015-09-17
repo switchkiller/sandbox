@@ -52,3 +52,10 @@ BUT HOW??
             printf("Connected component %d :",++numComponent)
             dfs(i);
         }
+
+------------
+##Finding the Articulation Point and Bridges:
+
+Let me tell you, this problem is one of most interesting to me. You are given a road map which is undirected. It has many intersections as vertices and edges. Now you have create a sabotage. Yea,.. SABOTAGE, that has the minimum cost such that the road network breaks down. This problem is about finding the least cost articulation point (intersection) or the least cost bridge (road) in an undirected graph. (road-map.)
+
+An articulation point is defined as a vertex in a graph G whose removal disconnects G. A graph without such point is called 'biconnected'. 

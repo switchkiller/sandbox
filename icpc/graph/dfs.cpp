@@ -24,3 +24,12 @@ void dfs(int u){
       dfs(v.first);
   }
 }
+
+void floodfill(int u, int color){
+  dfs_num[u] = color;
+  for (int j = 0; j < (int)AdjList.size(); j++){
+    ii v = AdjList[u][j];
+    if (dfs_num[v.first] == DFS_WHITE)
+      floodfill(v.first, color);
+  }
+}

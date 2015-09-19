@@ -58,4 +58,8 @@ BUT HOW??
 
 Let me tell you, this problem is one of most interesting to me. You are given a road map which is undirected. It has many intersections as vertices and edges. Now you have create a sabotage. Yea,.. SABOTAGE, that has the minimum cost such that the road network breaks down. This problem is about finding the least cost articulation point (intersection) or the least cost bridge (road) in an undirected graph. (road-map.)
 
-An articulation point is defined as a vertex in a graph G whose removal disconnects G. A graph without such point is called 'biconnected'. 
+An articulation point is defined as a vertex in a graph G whose removal disconnects G. A graph without such point is called 'biconnected'.
+
+Suppose, you are a vandal seeking to disrupt the telephone network. Which station in should you choose to blow up to cause the maximum amount of damage? Observe that there is a single point of failure, a single vertex whose deletion disconnects a connected componenets of the graph. Such a vertex is called articulation vertex or cut node.Deleting it causes a loss of connectivity between other nodes.
+
+ 

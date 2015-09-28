@@ -11,7 +11,7 @@ class Graph{
   list<int> *adj;
 public:
   Graph(int V);
-  void addEdge(int V, int w);
+  void addEdge(int v, int w);
   void bfs(int s);
 };
 

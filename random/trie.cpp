@@ -52,7 +52,7 @@ void insert(trie_t *pTrie, char key[]){
       pCrawl->children[index] = getNode();
     pCrawl = pCrawl->children[index];
   }
-    pCrawl->value = pTrie->count;
+  pCrawl->value = pTrie->count;
 }
 
 int search(trie *pTrie, const char key[]){
@@ -74,24 +74,68 @@ int search(trie *pTrie, const char key[]){
   return (0 != pCrawl && pCrawl->value);
 }
 
+int leafNode(trie_node_t *pNode){
+  return (pNode->value != 0);
+}
+
+int isItFree(trie_node_t *pNode){
+  int i;
+  for (i = 0; i < ALPHABET_SIZE; i++)
+    if (pNode->children[i])
+      return 0;
+  return 1;
+}
+
+bool deleleUtil(trie_node_t *pNode, char key[], int level, int len){
+  if (pNode){
+    if (level == len){ //Base.
+      if (pNode->value){
+        pNode->value = 0;
+        if (isItFree(pNode))
+          return true;
+        return false;
+      }
+    }
+    else{ //Recursion.
+       int index = CHAR_TO_INDEX(key[level]);
+       if (deleleUtil(pNode->children[index], key, level+1, len)){
+         free (pNode->children[index]);
+         return (!leafNode(pNode) && isItFree(pNode));
+       }
+    }
+  }
+  return false;
+}
+
+void deleteKey(trie_t *pTrie, char key[]){
+  int len = strlen(key);
+  if (len > 0){
+    deleleUtil(pTrie->root, key, 0, len);
+  }
+}
 int main(){
   char keys[][8] = {"the", "there", "a", "answer", "any", "by", "bye", "their"};
   trie_t trie;
   char output[][32] = {"Not present in trie", "Present in trie"};
+  initialize(&trie);
 
-initialize(&trie);
+  // Construct trie
+  for(int i = 0; i < ARRAY_SIZE(keys); i++)
+  {
+      insert(&trie, keys[i]);
+  }
 
-// Construct trie
-for(int i = 0; i < ARRAY_SIZE(keys); i++)
-{
-    insert(&trie, keys[i]);
-}
-
-// Search for different keys
-printf("%s --- %s\n", "the", output[search(&trie, "the")] );
-printf("%s --- %s\n", "these", output[search(&trie, "these")] );
-printf("%s --- %s\n", "their", output[search(&trie, "their")] );
-printf("%s --- %s\n", "thaw", output[search(&trie, "thaw")] );
-
-return 0;
+    // Search for different keys
+  printf("%s --- %s\n", "the", output[search(&trie, "the")] );
+  printf("%s --- %s\n", "these", output[search(&trie, "these")] );
+  printf("%s --- %s\n", "their", output[search(&trie, "their")] );
+  printf("%s --- %s\n", "thaw", output[search(&trie, "thaw")] );
+  printf("%s --- %s\n", "there", output[search(&trie, "there")] );
+  printf("%s --- %s\n", "a", output[search(&trie, "a")] );
+  deleteKey(&trie, keys[1]);
+  deleteKey(&trie, keys[2]);
+  printf("%s --- %s\n", "a", output[search(&trie, "a")] ); //TODO: error... 'a' not deleting
+  printf("%s --- %s\n", "there", output[search(&trie, "there")] );
+  //printf("%s --- %s\n", "answer", output[search(&trie, "answer")] );
+  return 0;
 }

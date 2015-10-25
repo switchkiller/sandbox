@@ -1,0 +1,5 @@
+Its 2050 and you are the planet CIA agent at NASA-D5 Saturn base station. Recently, you hacked into Kepler-416 alien system and have found out that D47 is going to envade planet earth soon and kill the planet president.
+You hacked the watch of D47's watch and found that it synchronizes and get the time of any planet sent from Kepler-416. You dont know the current time of the earth. But you can follow D47. Your mission is to save planet president and maintain peace.
+You got to know that D47 recieves a CRC where time is encoded with parity generator 1011. D47 will land at base station at India and take international flights upto America where president lives.
+We know that he has to take the shortest possible path. To reach from one to another location it takes exactly 10 seconds and every two station, a single bit error has to occur with D47's watch at least significant bit due to time dilation. 
+Now you have to report the exact time to city police so that they can capture the assassin and save the president.

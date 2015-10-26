@@ -26,5 +26,7 @@ int main(){
 			DFS(i,j);
 		 }
  printf("Image number %d contains %d war eagles.\n", ++k, count);
+ count = 0;
  }
+ return 0;
 }

@@ -24,13 +24,13 @@ int main(){
   char v, temp1, temp2;
   string str;
   int ver;
-  bool blank = false;
-  scanf("%d\n", &n);
+  bool blank = true;
+  scanf("%d", &n);
   while(n--){
     if (blank)
       printf("\n");
     blank = true;
-    scanf("%s\n", &v);
+    cin>>v;
     ver = v - 'A';
     count = ver + 1;
     REP(i, count)
@@ -43,7 +43,8 @@ int main(){
       temp2 = str[1] - 'A';
       unionn(temp1, temp2);
     }
-    printf("%d\n",count);
+    cout<<count<<endl;
+    count = 0;
   }
   return 0;
 }

@@ -30,6 +30,7 @@ int bfs(int s){
   return ++c;
 }
 int main(){
+  ios_base::sync_with_stdio(false);
   int n,x,y;
   cin >> n;
   REP(i,0,n){

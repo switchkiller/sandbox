@@ -3,6 +3,7 @@
 using namespace std;
 #define MAXN 30
 #define REP(i,a,b) for (int i = a; i < b; i++)
+#define TRvi(a) for (vi::iterator itr = (a).begin; itr != (a).end; ++itr)
 #define pb push_back
 typedef vector<int> vi;
 typedef list<int> Queue;
@@ -14,12 +15,11 @@ int bfs(int s){
   visited[s] = true;
   Queue Q;
   Q.pb(s);
-  vector<int>::iterator itr;
   while (!Q.empty()){
     s = Q.front();
     Q.pop_front();
     cout << s <<" ";
-    for(itr = AdjList[s].begin(); itr != AdjList[s].end(); ++itr){
+    TRvi(Adjlist[s]){
       if (!visited[*itr]){
       visited[*itr] = true;
       Q.pb(*itr);

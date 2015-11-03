@@ -1,9 +1,10 @@
 /* Implementation of bfs */
 #include<bits/stdc++.h>
+//ios_base::sync_with_studio(0);
 using namespace std;
 #define MAXN 30
 #define REP(i,a,b) for (int i = a; i < b; i++)
-#define TRvi(a) for (vi::iterator itr = (a).begin; itr != (a).end; ++itr)
+#define TRvi(a,itr) for (vi::iterator itr = (a).begin(); itr != (a).end(); ++itr)
 #define pb push_back
 typedef vector<int> vi;
 typedef list<int> Queue;
@@ -19,7 +20,7 @@ int bfs(int s){
     s = Q.front();
     Q.pop_front();
     cout << s <<" ";
-    TRvi(Adjlist[s]){
+    TRvi(AdjList[s],itr){
       if (!visited[*itr]){
       visited[*itr] = true;
       Q.pb(*itr);
@@ -29,7 +30,6 @@ int bfs(int s){
   return ++c;
 }
 int main(){
-  //ios_base::sync_with_studio(false);
   int n,x,y;
   cin >> n;
   REP(i,0,n){

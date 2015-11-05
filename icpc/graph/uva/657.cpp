@@ -10,13 +10,13 @@ int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, 1, 0, -1};
 char board[50 + 5][50 + 5];
 int cnt, h, w;
-void dfs1(int x, int y){
+void dfs1(int x, int y){                          // For inner connected components
 if (x < 0 || y < 0 || x == h || y == w || board[x][y] != 'X') return;
 board[x][y] = '*';
 REP(i,0,4)
   dfs1(x+dx[i],y+dy[i]);
 }
-void dfs(int x, int y){
+void dfs(int x, int y){                           // For outer connected components
   if (x < 0 || y < 0 || x == h || y == w || board[x][y] == '.') return;
   if (board[x][y] == 'X'){
     cnt++;

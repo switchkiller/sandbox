@@ -6,7 +6,7 @@ typedef vector<ii> vii;
 typedef vector<int> vi;
 #define DFS_WHITE -1
 #define DFS_BLACK 1
-#define REP(i,a,b) for (int i = a; i < b; i++)
+#define REP(i,a,b) for (int i = a; i < (int) b; i++)
 #define pb push_back
 vii AdjList;
 vi dfs_num;
@@ -17,15 +17,15 @@ int dfsNum, dfsRoot, rootChild;
 
 void articulationPointAndBridge(int u){
     dfs_low[u] = dfs_num[u] = dfsNum++;
-    REP(j,0,AdjList[u].size()){
-      ii v = AdjList[u][j];
+    for (int itr = 0; itr != AdjList[u].size(); itr++){
+      ii v = AdjList[u][itr];
       if (dfs_num[v.first] == DFS_WHITE){
         dfs_parent[v.first] = u;
         if (u == dfsRoot) rootChild++;
         articulationPointAndBridge(v.first);  // XXX after you start backtracking
         if (dfs_low[v.first] >= dfs_num[u])
           art_ver[u] = true;
-        if (dsf_low[v.first] > dfs_num[u])
+        if (dfs_low[v.first] > dfs_num[u])
           cout << u << "-" << v.first << " is a bridge.";
         dfs_low[u] = min(dfs_low[u],dfs_low[v.first]); //Backedge the ancestor will get updated automatically as a result of backtrack
       }

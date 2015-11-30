@@ -36,13 +36,13 @@ int main(){
   cin >> n;
   REP(i, 0 , n){
     cin >> a >> b >> c;
-
+    //This is to assign a level and assign a unique id.
     if (id.find(a) == id.end()) id[a] = V++;  /* XXX if id not found */
     if (id.find(b) == id.end()) id[b] = V++;
     if (id.find(c) == id.end()) id[c] = V++;
 
     int x = id[a], y = id[b], z = id[c];
-
+    // 3 nodes are connected to each other in a undirected way. Total of 2! = 6 combinations.
     adj[x].pb(y); adj[x].pb(z);
     adj[y].pb(x); adj[y].pb(y);
     adj[z].pb(x); adj[z].pb(x);

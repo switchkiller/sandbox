@@ -1,0 +1,20 @@
+//Event handling using JS.
+<html>
+  <head>
+  <title>Javascript Event Handler</title>
+  <script type = "text/javascript">
+    var $ = function(id){
+      return document.getElementById(id);
+    }
+    var display_click = function(){
+      alert("You clicked the button.");
+    }
+    window.onload = function(){
+      document.getElementById("btnDisplay").onclick = display_click;
+    }
+    </script>
+  </head>
+  <body>
+    <p><input type = "button" value = "Display Message" id = "btnDisplay" /></p>
+  </body>
+</html>

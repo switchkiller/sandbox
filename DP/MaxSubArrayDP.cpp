@@ -8,7 +8,7 @@ int MaxSubArray(int arr[], int size){
     e = e + arr[i];
     if (e < 0)
       e = 0;
-    if (e > s)
+    else if (e > s)
       s = e;
   }
   return s;

@@ -6,7 +6,7 @@ typedef vector<ii> vii;
 #define INF 100000000
 #define pb push_back
 int main(){
-  int V, E, s;
+  int V, E, s, u, v, w;
   vector<vii> AdjList;
   scanf("%d %d %d",&V, &E, &s);
   AdjList.assign(V, vii());
@@ -31,6 +31,6 @@ int main(){
     }
   }
   for (int i = 0; i < V; i++)
-    printf(""SSSP(%d %d) = %d\n", s, i, dist[i]);
+    printf("SSSP(%d %d) = %d\n", s, i, dist[i]);
   return 0;
 }

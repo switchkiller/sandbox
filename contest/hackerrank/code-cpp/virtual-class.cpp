@@ -4,12 +4,10 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
 #define MAX 100
-
 class Person{
 public:
-  char name[20];
+  char name[100];
   int age;
   virtual void getdata(){  };
   virtual void putdata(){  };
@@ -36,7 +34,6 @@ public:
   int sum;
   int val;
   static int current_id;
-
   void getdata(){
       sum = 0;
       cin >> name;
@@ -49,7 +46,7 @@ public:
       val = current_id;
   }
   void putdata(){
-    cout << name << " " << sum << " " << val << endl;
+    cout << name << " " << age << " "<< sum << " " << val << endl;
   }
 };
 int Professor::current_id = 0;

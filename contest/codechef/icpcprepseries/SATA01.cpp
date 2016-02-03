@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define MAX 10000
 using namespace std;
-char * division(char dividend[],int divisor){
+void division(char dividend[],int divisor){
     static char quotient[MAX];
     long temp=0;
     int i=0,j=0;
@@ -11,13 +11,15 @@ char * division(char dividend[],int divisor){
              quotient[j++] = 48;
          }
          else{
-             quotient[j++] = (temp / divisor) + 48;;
+             quotient[j++] = (temp / divisor) + 48;
              temp = temp % divisor;
          }
          i++;
     }
     quotient[j] = '\0';
-    return quotient;
+    if (temp > 0)
+      cout << "NO" << endl;
+    else cout << "YES" << endl;
 }
 
 int main(){
@@ -29,20 +31,7 @@ int main(){
   cin >> T;
   while(T--){
     cin >> N >> K;
-    quotient = division(N,K);
-    while(*quotient)
-             if(*quotient == 48){
-                 val = 1;
-                 quotient++;}
-             else{
-                 val = 0;
-                 break;
-               }
-  if (val == 1) cout << "NO";
-
-  else if (val == 0)
-    cout << "YES";
-  cout << endl;
+    division(N,K);
   }
   return 0;
 }

@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
 void kth(int arr[], int n, int k)
 {   int i = 0;
     sort(arr, arr+n);

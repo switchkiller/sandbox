@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> //Kadane algo for MaxSubArray
 using namespace std;
 #define MAX 50
 #define REP(a,b) for (int i = (a); i < (b); i++)

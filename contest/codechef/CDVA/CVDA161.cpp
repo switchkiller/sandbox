@@ -1,17 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define REP(i,a,b) for (long i = (a); i <= (b); i += 2)
-vector<long> vl;
-int ind=0;
+queue<long> Q;
+int ind=1;
 int operate(long N){
     if (N == 1)
         return
-    if (N % 2 == 0)
+    if (N % 2 == 0){
+        ind*=2;
         operate(N/2);
-    else
+    }
+    else{
+        operate(N/2);
 
 
 
+    }
 }
 int main(){
     ios_base::sync_with_stdio(0);

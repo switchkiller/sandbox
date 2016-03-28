@@ -19,10 +19,10 @@ Let Sk be the optimal subset of elements from {I0, I1,... Ik}. But what we find 
 To illustrate this, consider the following example:
 
 Item		Weight		Value
-I0		3			10
-I1		8			4
-I2		9			9
-I3		8			11
+I0		      3			10
+I1		      8			4
+I2		      9			9
+I3		      8			11
 
 The maximum weight the knapsack can hold is 20.
 
@@ -37,8 +37,8 @@ Using this definition, we have B[0, w] = w0, if w >= w0.
 
 Now, we can derive the following relationship that B[k, w] obeys:
 
-B[k, w] = B[k - 1,w], if wk > w
-	    = max { B[k - 1,w], B[k - 1,w - wk] + vk}
+    B[k, w] = B[k - 1,w], if wk > w
+    	    = max { B[k - 1,w], B[k - 1,w - wk] + vk}
 
 
 
@@ -66,18 +66,18 @@ Input: S, a set of n items as described earlier, W the total weight of the knaps
 
 Output: The maximal value of items in a valid knapsack.
 
-int w, k;
-for (w=0; w <= W; w++)
-     B[w] = 0
+    int w, k;
+    for (w=0; w <= W; w++)
+         B[w] = 0
 
-for (k=0; k<n; k++) {
+    for (k=0; k<n; k++) {
 
-     for (w = W; w>= w[k]; w--)  {
+         for (w = W; w>= w[k]; w--)  {
 
-          if (B[w – w[k]] + v[k] > B[w])
-	     B[w] = B[w – w[k]] + v[k]
-     }
-}
+              if (B[w – w[k]] + v[k] > B[w])
+    	     B[w] = B[w – w[k]] + v[k]
+         }
+    }
 
 Note on run time: Clearly the run time of this algorithm is O(nW), based on the nested loop structure and the simple operation inside of both loops. When comparing this with the previous O(2n), we find that depending on W, either the dynamic programming algorithm is more efficient or the brute force algorithm could be more efficient. (For example, for n=5, W=100000, brute force is preferable, but for n=30 and W=1000, the dynamic programming solution is preferable.)
 

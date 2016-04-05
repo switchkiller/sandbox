@@ -1,0 +1,436 @@
+# Nmap 6.47 scan initiated Tue Apr  5 22:29:18 2016 as: nmap -sV -v -oA subnet_1 192.168.32.1/24
+Nmap scan report for 192.168.32.2 [host down]
+Nmap scan report for 192.168.32.3 [host down]
+Nmap scan report for 192.168.32.4 [host down]
+Nmap scan report for 192.168.32.6 [host down]
+Nmap scan report for 192.168.32.7 [host down]
+Nmap scan report for 192.168.32.8 [host down]
+Nmap scan report for 192.168.32.9 [host down]
+Nmap scan report for 192.168.32.11 [host down]
+Nmap scan report for 192.168.32.17 [host down]
+Nmap scan report for 192.168.32.19 [host down]
+Nmap scan report for 192.168.32.20 [host down]
+Nmap scan report for 192.168.32.21 [host down]
+Nmap scan report for 192.168.32.22 [host down]
+Nmap scan report for 192.168.32.25 [host down]
+Nmap scan report for 192.168.32.26 [host down]
+Nmap scan report for 192.168.32.28 [host down]
+Nmap scan report for 192.168.32.29 [host down]
+Nmap scan report for 192.168.32.30 [host down]
+Nmap scan report for 192.168.32.31 [host down]
+Nmap scan report for 192.168.32.32 [host down]
+Nmap scan report for 192.168.32.34 [host down]
+Nmap scan report for 192.168.32.35 [host down]
+Nmap scan report for 192.168.32.36 [host down]
+Nmap scan report for 192.168.32.38 [host down]
+Nmap scan report for 192.168.32.39 [host down]
+Nmap scan report for 192.168.32.40 [host down]
+Nmap scan report for 192.168.32.42 [host down]
+Nmap scan report for 192.168.32.44 [host down]
+Nmap scan report for 192.168.32.46 [host down]
+Nmap scan report for 192.168.32.47 [host down]
+Nmap scan report for 192.168.32.48 [host down]
+Nmap scan report for 192.168.32.49 [host down]
+Nmap scan report for 192.168.32.50 [host down]
+Nmap scan report for 192.168.32.51 [host down]
+Nmap scan report for 192.168.32.52 [host down]
+Nmap scan report for 192.168.32.55 [host down]
+Nmap scan report for 192.168.32.59 [host down]
+Nmap scan report for 192.168.32.60 [host down]
+Nmap scan report for 192.168.32.61 [host down]
+Nmap scan report for 192.168.32.62 [host down]
+Nmap scan report for 192.168.32.63 [host down]
+Nmap scan report for 192.168.32.66 [host down]
+Nmap scan report for 192.168.32.67 [host down]
+Nmap scan report for 192.168.32.69 [host down]
+Nmap scan report for 192.168.32.70 [host down]
+Nmap scan report for 192.168.32.71 [host down]
+Nmap scan report for 192.168.32.72 [host down]
+Nmap scan report for 192.168.32.73 [host down]
+Nmap scan report for 192.168.32.74 [host down]
+Nmap scan report for 192.168.32.75 [host down]
+Nmap scan report for 192.168.32.76 [host down]
+Nmap scan report for 192.168.32.77 [host down]
+Nmap scan report for 192.168.32.79 [host down]
+Nmap scan report for 192.168.32.80 [host down]
+Nmap scan report for 192.168.32.81 [host down]
+Nmap scan report for 192.168.32.82 [host down]
+Nmap scan report for 192.168.32.83 [host down]
+Nmap scan report for 192.168.32.84 [host down]
+Nmap scan report for 192.168.32.87 [host down]
+Nmap scan report for 192.168.32.90 [host down]
+Nmap scan report for 192.168.32.91 [host down]
+Nmap scan report for 192.168.32.93 [host down]
+Nmap scan report for 192.168.32.94 [host down]
+Nmap scan report for 192.168.32.95 [host down]
+Nmap scan report for 192.168.32.96 [host down]
+Nmap scan report for 192.168.32.97 [host down]
+Nmap scan report for 192.168.32.98 [host down]
+Nmap scan report for 192.168.32.100 [host down]
+Nmap scan report for 192.168.32.101 [host down]
+Nmap scan report for 192.168.32.102 [host down]
+Nmap scan report for 192.168.32.103 [host down]
+Nmap scan report for 192.168.32.104 [host down]
+Nmap scan report for 192.168.32.105 [host down]
+Nmap scan report for 192.168.32.106 [host down]
+Nmap scan report for 192.168.32.107 [host down]
+Nmap scan report for 192.168.32.108 [host down]
+Nmap scan report for 192.168.32.110 [host down]
+Nmap scan report for 192.168.32.111 [host down]
+Nmap scan report for 192.168.32.112 [host down]
+Nmap scan report for 192.168.32.113 [host down]
+Nmap scan report for 192.168.32.114 [host down]
+Nmap scan report for 192.168.32.115 [host down]
+Nmap scan report for 192.168.32.116 [host down]
+Nmap scan report for 192.168.32.117 [host down]
+Nmap scan report for 192.168.32.118 [host down]
+Nmap scan report for 192.168.32.119 [host down]
+Nmap scan report for 192.168.32.120 [host down]
+Nmap scan report for 192.168.32.121 [host down]
+Nmap scan report for 192.168.32.122 [host down]
+Nmap scan report for 192.168.32.123 [host down]
+Nmap scan report for 192.168.32.124 [host down]
+Nmap scan report for 192.168.32.125 [host down]
+Nmap scan report for 192.168.32.126 [host down]
+Nmap scan report for 192.168.32.127 [host down]
+Nmap scan report for 192.168.32.129 [host down]
+Nmap scan report for 192.168.32.130 [host down]
+Nmap scan report for 192.168.32.131 [host down]
+Nmap scan report for 192.168.32.132 [host down]
+Nmap scan report for 192.168.32.133 [host down]
+Nmap scan report for 192.168.32.134 [host down]
+Nmap scan report for 192.168.32.135 [host down]
+Nmap scan report for 192.168.32.136 [host down]
+Nmap scan report for 192.168.32.137 [host down]
+Nmap scan report for 192.168.32.138 [host down]
+Nmap scan report for 192.168.32.139 [host down]
+Nmap scan report for 192.168.32.140 [host down]
+Nmap scan report for 192.168.32.141 [host down]
+Nmap scan report for 192.168.32.143 [host down]
+Nmap scan report for 192.168.32.144 [host down]
+Nmap scan report for 192.168.32.145 [host down]
+Nmap scan report for 192.168.32.146 [host down]
+Nmap scan report for 192.168.32.147 [host down]
+Nmap scan report for 192.168.32.148 [host down]
+Nmap scan report for 192.168.32.149 [host down]
+Nmap scan report for 192.168.32.150 [host down]
+Nmap scan report for 192.168.32.151 [host down]
+Nmap scan report for 192.168.32.152 [host down]
+Nmap scan report for 192.168.32.153 [host down]
+Nmap scan report for 192.168.32.154 [host down]
+Nmap scan report for 192.168.32.155 [host down]
+Nmap scan report for 192.168.32.156 [host down]
+Nmap scan report for 192.168.32.157 [host down]
+Nmap scan report for 192.168.32.158 [host down]
+Nmap scan report for 192.168.32.159 [host down]
+Nmap scan report for 192.168.32.160 [host down]
+Nmap scan report for 192.168.32.161 [host down]
+Nmap scan report for 192.168.32.162 [host down]
+Nmap scan report for 192.168.32.163 [host down]
+Nmap scan report for 192.168.32.164 [host down]
+Nmap scan report for 192.168.32.165 [host down]
+Nmap scan report for 192.168.32.166 [host down]
+Nmap scan report for 192.168.32.167 [host down]
+Nmap scan report for 192.168.32.168 [host down]
+Nmap scan report for 192.168.32.169 [host down]
+Nmap scan report for 192.168.32.170 [host down]
+Nmap scan report for 192.168.32.171 [host down]
+Nmap scan report for 192.168.32.172 [host down]
+Nmap scan report for 192.168.32.173 [host down]
+Nmap scan report for 192.168.32.174 [host down]
+Nmap scan report for 192.168.32.175 [host down]
+Nmap scan report for 192.168.32.176 [host down]
+Nmap scan report for 192.168.32.177 [host down]
+Nmap scan report for 192.168.32.178 [host down]
+Nmap scan report for 192.168.32.179 [host down]
+Nmap scan report for 192.168.32.180 [host down]
+Nmap scan report for 192.168.32.181 [host down]
+Nmap scan report for 192.168.32.182 [host down]
+Nmap scan report for 192.168.32.183 [host down]
+Nmap scan report for 192.168.32.184 [host down]
+Nmap scan report for 192.168.32.185 [host down]
+Nmap scan report for 192.168.32.186 [host down]
+Nmap scan report for 192.168.32.187 [host down]
+Nmap scan report for 192.168.32.188 [host down]
+Nmap scan report for 192.168.32.189 [host down]
+Nmap scan report for 192.168.32.190 [host down]
+Nmap scan report for 192.168.32.191 [host down]
+Nmap scan report for 192.168.32.192 [host down]
+Nmap scan report for 192.168.32.193 [host down]
+Nmap scan report for 192.168.32.194 [host down]
+Nmap scan report for 192.168.32.195 [host down]
+Nmap scan report for 192.168.32.196 [host down]
+Nmap scan report for 192.168.32.197 [host down]
+Nmap scan report for 192.168.32.198 [host down]
+Nmap scan report for 192.168.32.199 [host down]
+Nmap scan report for 192.168.32.200 [host down]
+Nmap scan report for 192.168.32.201 [host down]
+Nmap scan report for 192.168.32.202 [host down]
+Nmap scan report for 192.168.32.203 [host down]
+Nmap scan report for 192.168.32.204 [host down]
+Nmap scan report for 192.168.32.205 [host down]
+Nmap scan report for 192.168.32.206 [host down]
+Nmap scan report for 192.168.32.207 [host down]
+Nmap scan report for 192.168.32.208 [host down]
+Nmap scan report for 192.168.32.209 [host down]
+Nmap scan report for 192.168.32.210 [host down]
+Nmap scan report for 192.168.32.211 [host down]
+Nmap scan report for 192.168.32.212 [host down]
+Nmap scan report for 192.168.32.213 [host down]
+Nmap scan report for 192.168.32.214 [host down]
+Nmap scan report for 192.168.32.215 [host down]
+Nmap scan report for 192.168.32.216 [host down]
+Nmap scan report for 192.168.32.217 [host down]
+Nmap scan report for 192.168.32.218 [host down]
+Nmap scan report for 192.168.32.219 [host down]
+Nmap scan report for 192.168.32.220 [host down]
+Nmap scan report for 192.168.32.221 [host down]
+Nmap scan report for 192.168.32.222 [host down]
+Nmap scan report for 192.168.32.223 [host down]
+Nmap scan report for 192.168.32.224 [host down]
+Nmap scan report for 192.168.32.225 [host down]
+Nmap scan report for 192.168.32.226 [host down]
+Nmap scan report for 192.168.32.227 [host down]
+Nmap scan report for 192.168.32.228 [host down]
+Nmap scan report for 192.168.32.229 [host down]
+Nmap scan report for 192.168.32.230 [host down]
+Nmap scan report for 192.168.32.231 [host down]
+Nmap scan report for 192.168.32.232 [host down]
+Nmap scan report for 192.168.32.233 [host down]
+Nmap scan report for 192.168.32.234 [host down]
+Nmap scan report for 192.168.32.235 [host down]
+Nmap scan report for 192.168.32.236 [host down]
+Nmap scan report for 192.168.32.237 [host down]
+Nmap scan report for 192.168.32.238 [host down]
+Nmap scan report for 192.168.32.239 [host down]
+Nmap scan report for 192.168.32.240 [host down]
+Nmap scan report for 192.168.32.241 [host down]
+Nmap scan report for 192.168.32.242 [host down]
+Nmap scan report for 192.168.32.243 [host down]
+Nmap scan report for 192.168.32.244 [host down]
+Nmap scan report for 192.168.32.245 [host down]
+Nmap scan report for 192.168.32.246 [host down]
+Nmap scan report for 192.168.32.247 [host down]
+Nmap scan report for 192.168.32.248 [host down]
+Nmap scan report for 192.168.32.249 [host down]
+Nmap scan report for 192.168.32.250 [host down]
+Nmap scan report for 192.168.32.251 [host down]
+Nmap scan report for 192.168.32.252 [host down]
+Nmap scan report for 192.168.32.253 [host down]
+Nmap scan report for 192.168.32.254 [host down]
+Nmap scan report for 192.168.32.255 [host down]
+Nmap scan report for 192.168.32.0
+Host is up (0.00083s latency).
+Not shown: 998 closed ports
+PORT   STATE    SERVICE VERSION
+23/tcp open     telnet  Cisco router telnetd
+80/tcp filtered http
+Service Info: OS: IOS; Device: router; CPE: cpe:/o:cisco:ios
+
+Nmap scan report for 192.168.32.1
+Host is up (0.00046s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE    VERSION
+23/tcp open  tcpwrapped
+80/tcp open  http       Cisco IOS http config
+Service Info: OS: IOS; Device: switch; CPE: cpe:/o:cisco:ios
+
+Nmap scan report for 192.168.32.5
+Host is up (0.0015s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE        VERSION
+22/tcp  open  ssh            OpenSSH 3.4p1.RL Allied Telesis (protocol 2.0)
+23/tcp  open  telnet?
+80/tcp  open  http           GoAhead-Webs httpd
+443/tcp open  ssl/tcpwrapped
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at http://www.insecure.org/cgi-bin/servicefp-submit.cgi :
+SF-Port23-TCP:V=6.47%I=7%D=4/5%Time=5703EFCA%P=x86_64-unknown-linux-gnu%r(
+SF:NULL,27,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOST
+SF:EL_1\r\n\r\nUser\x20Name:")%r(GenericLines,45,"\xff\xfd\x03\xff\xfb\x03
+SF:\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:\r\n\r\r
+SF:\nUser\x20Name:\r\n\r\r\nUser\x20Name:")%r(GetRequest,50,"\xff\xfd\x03\
+SF:xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Na
+SF:me:GET\x20/\x20HTTP/1\.0\r\n\rPassword:\r\n\r\r\nUser\x20Name:")%r(HTTP
+SF:Options,54,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nH
+SF:OSTEL_1\r\n\r\nUser\x20Name:OPTIONS\x20/\x20HTTP/1\.0\r\n\rPassword:\r\
+SF:n\r\r\nUser\x20Name:")%r(RTSPRequest,54,"\xff\xfd\x03\xff\xfb\x03\xff\x
+SF:fd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:OPTIONS\x20/\x
+SF:20RTSP/1\.0\r\n\rPassword:\r\n\r\r\nUser\x20Name:")%r(RPCCheck,33,"\xff
+SF:\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nU
+SF:ser\x20Name:\r\nUser\x20Name:")%r(DNSVersionBindReq,33,"\xff\xfd\x03\xf
+SF:f\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name
+SF::\r\nUser\x20Name:")%r(DNSStatusRequest,33,"\xff\xfd\x03\xff\xfb\x03\xf
+SF:f\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:\r\nUser\x2
+SF:0Name:")%r(Help,37,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\
+SF:n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:HELP\r\n\rPassword:")%r(SSLSessionR
+SF:eq,33,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL
+SF:_1\r\n\r\nUser\x20Name:\r\nUser\x20Name:")%r(Kerberos,33,"\xff\xfd\x03\
+SF:xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Na
+SF:me:\r\nUser\x20Name:")%r(SMBProgNeg,33,"\xff\xfd\x03\xff\xfb\x03\xff\xf
+SF:d\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:\r\nUser\x20Nam
+SF:e:")%r(X11Probe,31,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\
+SF:n\r\r\nHOSTEL_1\r\n\r\nUser\x20Name:lPassword:")%r(FourOhFourRequest,73
+SF:,"\xff\xfd\x03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\
+SF:n\r\nUser\x20Name:GET\x20/nice%20ports%2C/Tri%6Eity\.txt%2ebak\x20HTTP/
+SF:1\.0\r\n\rPassword:\r\n\r\r\nUser\x20Name:")%r(LPDString,44,"\xff\xfd\x
+SF:03\xff\xfb\x03\xff\xfd\x01\xff\xfb\x01\r\n\r\r\nHOSTEL_1\r\n\r\nUser\x2
+SF:0Name:\r>\x1b\[K\x20\r\x1b\[Cdefault\r\n\rPassword:");
+Service Info: Device: switch
+
+Nmap scan report for 192.168.32.10
+Host is up (0.0019s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      Cisco SSH 1.25 (protocol 1.99)
+23/tcp  open  telnet   Cisco router telnetd
+80/tcp  open  http     Cisco IOS http config
+443/tcp open  ssl/http Cisco IOS http config
+Service Info: OS: IOS; Device: router; CPE: cpe:/o:cisco:ios
+
+Nmap scan report for 192.168.32.12
+Host is up (0.00052s latency).
+All 1000 scanned ports on 192.168.32.12 are filtered
+
+Nmap scan report for 192.168.32.13
+Host is up (0.00071s latency).
+All 1000 scanned ports on 192.168.32.13 are filtered
+
+Nmap scan report for 192.168.32.14
+Host is up (0.00070s latency).
+All 1000 scanned ports on 192.168.32.14 are filtered
+
+Nmap scan report for 192.168.32.15
+Host is up (0.00060s latency).
+Not shown: 999 closed ports
+PORT     STATE SERVICE        VERSION
+3389/tcp open  ms-wbt-server?
+
+Nmap scan report for 192.168.32.16
+Host is up (0.00068s latency).
+All 1000 scanned ports on 192.168.32.16 are closed
+
+Nmap scan report for 192.168.32.18
+Host is up (0.0063s latency).
+All 1000 scanned ports on 192.168.32.18 are closed
+
+Nmap scan report for 192.168.32.23
+Host is up (0.0032s latency).
+All 1000 scanned ports on 192.168.32.23 are closed
+
+Nmap scan report for 192.168.32.24
+Host is up (0.020s latency).
+All 1000 scanned ports on 192.168.32.24 are closed
+
+Nmap scan report for 192.168.32.27
+Host is up (0.0059s latency).
+All 1000 scanned ports on 192.168.32.27 are closed
+
+Nmap scan report for 192.168.32.33
+Host is up (0.00045s latency).
+All 1000 scanned ports on 192.168.32.33 are filtered
+
+Nmap scan report for 192.168.32.37
+Host is up (0.00069s latency).
+Not shown: 999 closed ports
+PORT     STATE    SERVICE VERSION
+1935/tcp filtered rtmp
+
+Nmap scan report for 192.168.32.41
+Host is up (0.0100s latency).
+All 1000 scanned ports on 192.168.32.41 are closed
+
+Nmap scan report for 192.168.32.43
+Host is up (0.021s latency).
+All 1000 scanned ports on 192.168.32.43 are closed
+
+Nmap scan report for 192.168.32.45
+Host is up (0.0039s latency).
+All 1000 scanned ports on 192.168.32.45 are filtered
+
+Nmap scan report for 192.168.32.53
+Host is up (0.00069s latency).
+All 1000 scanned ports on 192.168.32.53 are filtered
+
+Nmap scan report for 192.168.32.54
+Host is up (0.00061s latency).
+All 1000 scanned ports on 192.168.32.54 are closed
+
+Nmap scan report for 192.168.32.56
+Host is up (0.0013s latency).
+Not shown: 999 closed ports
+PORT   STATE SERVICE VERSION
+80/tcp open  http    GoAhead-Webs httpd
+
+Nmap scan report for 192.168.32.57
+Host is up (0.00069s latency).
+All 1000 scanned ports on 192.168.32.57 are filtered
+
+Nmap scan report for 192.168.32.58
+Host is up (0.00067s latency).
+All 1000 scanned ports on 192.168.32.58 are filtered
+
+Nmap scan report for 192.168.32.64
+Host is up (0.00070s latency).
+All 1000 scanned ports on 192.168.32.64 are filtered
+
+Nmap scan report for 192.168.32.65
+Host is up (0.00065s latency).
+All 1000 scanned ports on 192.168.32.65 are filtered
+
+Nmap scan report for 192.168.32.68
+Host is up (0.00058s latency).
+All 1000 scanned ports on 192.168.32.68 are closed
+
+Nmap scan report for 192.168.32.78
+Host is up (0.0028s latency).
+All 1000 scanned ports on 192.168.32.78 are closed
+
+Nmap scan report for 192.168.32.85
+Host is up (0.00062s latency).
+All 1000 scanned ports on 192.168.32.85 are closed
+
+Nmap scan report for 192.168.32.86
+Host is up (0.0020s latency).
+Not shown: 996 filtered ports
+PORT     STATE SERVICE     VERSION
+135/tcp  open  msrpc       Microsoft Windows RPC
+139/tcp  open  netbios-ssn
+445/tcp  open  netbios-ssn
+6646/tcp open  unknown
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.32.88
+Host is up (0.036s latency).
+Not shown: 999 filtered ports
+PORT     STATE  SERVICE     VERSION
+1947/tcp closed sentinelsrm
+
+Nmap scan report for 192.168.32.89
+Host is up (0.00053s latency).
+All 1000 scanned ports on 192.168.32.89 are closed
+
+Nmap scan report for 192.168.32.92
+Host is up (0.00061s latency).
+All 1000 scanned ports on 192.168.32.92 are filtered
+
+Nmap scan report for 192.168.32.99
+Host is up (0.022s latency).
+All 1000 scanned ports on 192.168.32.99 are closed
+
+Nmap scan report for 192.168.32.109
+Host is up (0.00041s latency).
+All 1000 scanned ports on 192.168.32.109 are filtered
+
+Nmap scan report for 192.168.32.128
+Host is up (0.00061s latency).
+Not shown: 999 closed ports
+PORT     STATE    SERVICE VERSION
+1935/tcp filtered rtmp
+
+Nmap scan report for 192.168.32.142
+Host is up (0.00055s latency).
+All 1000 scanned ports on 192.168.32.142 are filtered
+
+Read data files from: /opt/metasploit/common/share/nmap/
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+# Nmap done at Tue Apr  5 22:35:42 2016 -- 256 IP addresses (36 hosts up) scanned in 384.19 seconds

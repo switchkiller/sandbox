@@ -14,14 +14,13 @@ def main(filename=None):
 	fout = open("ans.out", 'w+')
 	with open(filename, "r") as f:
 		num_cases = read_int(f)
+		print (num_cases)
 		#enumerate from position 1 because 0 has N
-		for i, line in enumerate(f,1): 
-			print (line	)
-			words = read_list_of_str(f)
-		
+		for i, line in enumerate(f.readlines(),1):
+			words = line.split()
 			words.reverse()
-			#print ("Case #" + str(i) + ": " + " ".join(words))
-			fout.write("Case #" + str(i) + ": " + " ".join(words) + "\n")
+			print ("Case #" + str(i) + ": " + " ".join(words) + '\n')
+			fout.write("Case #" + str(i) + ": " + " ".join(words) + '\n')
 	fout.close()
 	return 0
 

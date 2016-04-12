@@ -1,17 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bitset<1000010> bs;
+bitset<1000010> bs;	//better than using vector<bool> 10^7 must be enough.
 vector<int> primes;
 
-void sieve(int upper_bound){
-	bs.set();
+
+void sieve(long long upper_bound){
+	bs.set();	// Add 1 to include at the upper bound
 	bs[0] = bs[1] = 0;
-	for (long long i = 2; i < sqrt(upper_bound+1); i++)	//optimized
+	for (long long i = 2; i <= upper_bound+1; i++)	//optimized
 		if (bs[i]){
-			for (long long j = 2*i; j < upper_bound + 1; j += i) //optimized
+			for (long long j = i*i; j <= upper_bound + 1; j += i) //optimized
 				bs[j] = 0;
-			primes.push_back(i);
+			primes.push_back((int)i);
 		}																																																																																																																																		
 }
 

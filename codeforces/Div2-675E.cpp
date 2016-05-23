@@ -17,9 +17,12 @@ void build(const vector<int> &a, int n){
 
 int get(int l, int r){
 	pair<int, int> ans{-1,-1};
-	for (l+=maxn, r+=maxn+1; l < r; l >>= 1, r >>= 1)
-
-}
+	for (l+=maxn, r+=maxn+1; l < r; l >>= 1, r >>= 1){
+		if (l & 1) ans = max(ans, tree[l++]);
+		if (r & 1) ans = max(ans, tree[--r]);
+	}
+	return ans.second;
+}	
 
 int main(){
 	ios_base::sync_with_stdio(false); cin.tie(0);
@@ -36,8 +39,11 @@ int main(){
 	long long ans = 0;
 	dp[n-1] = 0;
 	RREP(i,n-2,-1){
-		int m = get();
-
+		int m = get(i + 1, a[i]);
+		dp[i] = dp[m] - (a[i] - m) + n - i - 1;
+        ans += dp[i];
 	}
+	
+	cout << ans << endl;
 	return 0;
 }

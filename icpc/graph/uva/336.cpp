@@ -16,7 +16,7 @@ void bfs(int s, mp gh){
 		int size = gh[val].size();
 		for (int i = 0; i < size; i++){
 			int n = gh[val][i];
-			if (!visited.count(n)){
+			if (!visited.count(n)){			// Check if key n is present in the map utility (if a value has been assigned.)
 				visited[n]=visited[val]+1; 
 				q.push(n);
 			}

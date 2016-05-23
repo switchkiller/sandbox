@@ -30,7 +30,7 @@ int floodfill(int s, int color){
 	}
 }
 
-void edgeDirections(int u){
+void edgeDirections(int u){ // Refer iitd lecture - Data Structure course.
 	visited[u] = 2;
 	Trvvi(AdjList[u], itr){
 		if (visited[*itr] == 0)

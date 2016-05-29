@@ -37,6 +37,6 @@ int main(){
 		mx=MAX, mn=MIN;
 	}
 	fmnmx();
-	cout << w[mxpos] - w[mnpos] << endl;
+	cout << w[mxpos] - w[mnpos] << endl;	
 	return 0;
 }

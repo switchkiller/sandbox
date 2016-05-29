@@ -19,3 +19,5 @@ Incase of partial overlap look for the left and right of the root node.
 Incase of total overlap look return the value of the root node (or that node) It is the minimum range query. 
 
 Incase of no overlap, return a max (large number) from and backtrack to previous (parent) node. 
+
+Reference: http://letuskode.blogspot.in/2013/01/segtrees.html

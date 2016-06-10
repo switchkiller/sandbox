@@ -1,3 +1,4 @@
+// Bear and Tower of Cubes
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +16,7 @@ void rec(ll m,ll steps,ll sum)
        return;
     }
     else
-    {
+    { Hello World
         ll x=1;
         while(sq(x+1)<=m) x++;
         rec(m-sq(x),steps+1,sum+sq(x));
@@ -26,7 +27,6 @@ void rec(ll m,ll steps,ll sum)
     }
 }
 int main(){
-
     ll m;
     cin>>m;
     rec(m,0,0);

@@ -11,6 +11,7 @@ using namespace std;
 #define RREP(i,a,b) for (int i = (a); i > (b); i--)
 #define FOR(i,a,b) for (int i = (a); i <= (b); i++)
 #define inf 0x3f3f3f3f
+#define all(X) X.begin(), X.end()
 
 bool isint(int x){
     return (x == (int) x);
@@ -65,29 +66,88 @@ bool Miller(long long p,int iteration){
     return true;
 }
 
+
+vector<int> v;
+map<int, bool> p;
+
+void chefncoin(int n){
+    if (n == 0 || n == 1)
+        return ;
+    else if (find(all(v), n) != v.end())
+        return;
+    v.push_back(n);
+    chefncoin(n-1);
+    long long tmp, x, rem;
+    FOR(i,1,log2(n)){
+        x = pow(n,1.0/i);
+        if (isint(x) && Miller(x,5)){
+            tmp = pow(x,i);
+            rem = n - tmp;
+            if (rem == 0)
+                p[n] = true;
+            chefncoin(rem);
+        }
+    }
+    return;
+}
+
 int main(){
     int t; long long n, x, val=1;
     cin >> t;
     while (t--){
         cin >> n;
-        int flag = 0;
-        while (n){
-            val = 1;
-            FOR(i,1,log2(n)){
-                x = pow(n, 1.0/i);
-                if (isint(x)){
-                    if (Miller(x,5)){
-                        long long tmp = pow(x,i);
-                        val = max(val, tmp);
-                        cout << x << " " << i << " " << val << endl;
+        v.clear();
+        p.clear();
+        chefncoin(n);
+        sort(all(v));
+
+        // REP(i,0,v.size())
+        //     cout <<  v[i] << " ";
+        //
+        // for (map<int, bool>::iterator it = p.begin(); it != p.end(); it++)
+        //     cout << it->first << " " << it->second << endl;
+
+        map<int, int> mp;
+        mp[0] = 0;
+        mp[1] = 0;
+        int x;
+        REP(i,0,v.size()){
+            if (p[v[i]]){
+                mp[v[i]]=0;}
+                // cout << v[i] <<" " << 0 << endl;}
+            else{
+                int tmp, rem;
+                mp[v[i]] = 1;
+                if (!p[v[i]-1]){
+                    mp[v[i]] = v[i]-1;
+                    continue;
+                }
+                FOR(j,1,log2(v[i])){
+                    x = pow(v[i],1.0/j);
+                    if (isint(x) && Miller(x,5)){
+                        tmp = pow(x,j);
+                        rem = v[i] - tmp;
+                        if (!p[rem]){
+                            mp[v[i]]=rem;
+                            // cout << v[i] << " " << rem << endl;
+                            // cout << rem << endl;
+                            break;
+                        }
                     }
                 }
             }
-            n -= val;
-            flag = (flag + 1) % 2;
         }
-        if (flag) cout << "Chef\n";
-        else cout << "Misha\n";
+
+        // for (map<int, int>::iterator it = mp.begin(); it != mp.end(); it++)
+        //     cout << it->first << " " << it->second << endl;
+
+        int flag = 0;
+        while (mp[n]){
+            n = mp[n];
+            flag++;
+        }
+        if (flag % 2) cout << "Misha\n";
+        else cout << "Chef\n";
     }
     return 0;
 }

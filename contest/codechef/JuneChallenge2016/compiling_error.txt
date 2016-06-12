@@ -1,0 +1,38 @@
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:25:11: error: ‘MAXN’ was not declared in this scope
+ bool used[MAXN];
+           ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:26:16: error: ‘MAXN’ was not declared in this scope
+ int timer, tin[MAXN], fup[MAXN];
+                ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:26:27: error: ‘MAXN’ was not declared in this scope
+ int timer, tin[MAXN], fup[MAXN];
+                           ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp: In function ‘void dfs(int, int)’:
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:29:5: error: ‘used’ was not declared in this scope
+     used[v] = true;
+     ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:30:5: error: ‘tin’ was not declared in this scope
+     tin[v] = fup[v] = timer++;
+     ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:30:14: error: ‘fup’ was not declared in this scope
+     tin[v] = fup[v] = timer++;
+              ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:47:1: error: expected primary-expression before ‘}’ token
+ }
+ ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp: In function ‘int main()’:
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:56:9: error: ‘gh’ was not declared in this scope
+         gh[a].push_back(b);
+         ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:60:14: error: ‘used’ was not declared in this scope
+         if (!used[i]){
+              ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:62:20: error: ‘tin’ was not declared in this scope
+             memset(tin, 0, sizeof tin);
+                    ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:63:20: error: ‘fup’ was not declared in this scope
+             memset(fup, 0, sizeof fup);
+                    ^
+/home/switchkiller/sandbox/contest/codechef/JuneChallenge2016/H.cpp:69:13: error: ‘used’ was not declared in this scope
+         if (used[i]) cout << i << " ";
+             ^

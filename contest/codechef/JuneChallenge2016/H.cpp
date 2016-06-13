@@ -19,7 +19,7 @@ typedef vector<vi> vvi;
 int n, e;
 int gi[MAX];
 vi g[MAX];
-// bool visited[MAX];
+bool visited[MAX];
 int conn;
 
 bool used[MAX];
@@ -28,6 +28,13 @@ map<int, bool> mp;
 vector< map<int, int> > pcomp, tcomp;
 map<int, int> m;
 map<int, int> bk;
+
+void tdfs(int u, int f){
+    visited[u] = true;
+    m[gi[u]]++;
+    TRvvi(it, g[u])
+        if (!visited[*it] && *it != f) tdfs(*it, f);
+}
 
 void dfs (int v, int p = -1) {
     used[v] = true;
@@ -79,7 +86,7 @@ int main(){
             conn++;
         }
 
-    cout << pcomp[0][1] << " " << pcomp[0][3] << " " << pcomp[1][1] << " " << pcomp[1][3] << endl;
+    // cout << pcomp[0][1] << " " << pcomp[0][3] << " " << pcomp[1][1] << " " << pcomp[1][3] << endl;
 
     // See vertex belongs to which component.
     // FOR(i,1,n)
@@ -95,18 +102,55 @@ int main(){
             // cout << it->first << " ";
             if (tot[it->first] == 0)
                 tot[it->first] = 1;
+            m[gi[it->first]]++;
             tot[it->first] *= it->second;
         }
     }
     int total=0;
     for(map<int, int>::iterator it = tot.begin(); it != tot.end(); it++)
-        total += tot[it->first];
+        if (m[gi[it->first]] > 1)
+            total += tot[it->first];
 
     // cout << total;
     FOR(i,1,n){
-        if (!mp[n])
+        memset(visited, false, sizeof visited);
+        if (!mp[i])
             ans[i] = total + pcomp[bk[i]][gi[i]] - 1;
-        else ans[i] = 0; // solve for art point now
+        else{
+            int tcom=0;
+            tcomp.clear(); m.clear();
+            FOR(j,1,n){
+                if (bk[i] == bk[j] && j != i && !visited[j]){
+                    // cout << j << i;
+                    tdfs(j, i);
+                    tcom++;
+                    tcomp.push_back(m);
+                    m.clear();
+                }
+            }
+            // cout << endl << tcom << endl;
+            map<int, int> ttot;
+            REP(j,0,tcom){
+                for (map<int, int>::iterator it = tcomp[j].begin(); it != tcomp[j].end(); it++ ){
+                    // cout << j << " " << it->first << " " << it->second << endl;
+                    if (it->second == 0)
+                        continue;
+                    // cout << it->first << " ";
+                    if (ttot[it->first] == 0)
+                        ttot[it->first] = 1;
+                    m[gi[it->first]]++;
+                    ttot[it->first] *= it->second;
+                }
+            }
+            int temp_total=0;
+            for(map<int, int>::iterator it = ttot.begin(); it != ttot.end(); it++)
+                if (m[gi[it->first]] > 1)
+                    temp_total += ttot[it->first];
+
+            ans[i] = total + pcomp[bk[i]][gi[i]] + temp_total - 1;
+
+
+        }
     }
 
     // See the total for the given team as component product.

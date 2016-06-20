@@ -25,6 +25,7 @@ int left(int p) { return (p << 1); }
 int right(int p) { return (p << 1) + 1; }
 
 void buildtree(int p, int b, int e){
+    if (b > e) return;
     if (b == e)
         st[p] = b;
     else{

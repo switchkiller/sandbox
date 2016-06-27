@@ -45,7 +45,7 @@ int right(int p){
 }
 // Build the segment tree
 void build(int p, int b, int e){
-    if (b > e) return;
+    if (b == e) return;
     if (b == e-1) {
         st[p] = baseArray[b];
         return;
@@ -61,6 +61,7 @@ void build(int p, int b, int e){
 void dfs(int cur, int prev, int _depth=0){
     pa[0][cur] = prev;  // Store thee in the example is special, only 2 nodes had degree greater than 2. We did a simple decomposition an
     subsize[cur] = 1;
+    depth[cur] = _depth;
     for(int i = 0; i < adj[cur].size(); i++){
         if (adj[cur][i] != prev){
             otherEnd[indexx[cur][i]] = adj[cur][i];
@@ -98,22 +99,14 @@ void hld(int cur, int prev, int cost){
 }
 
 int LCA(int u, int v){  // Get the LCA using dp table
-    int log;
-    if (depth[u] < depth[v]) swap(u,v);
-    for (int log = 1; 1 << log < depth[u]; log++);
-    log--;
-
-    for (int i = log; i >= 0; i--)
-        if (depth[u] - (1 << i) >= depth[v])
-            u = pa[i][u];
-
-    if (u == v) return u;
-
-    for(int i = log; i >= 0; i++)
-        for(int j = 0; j < n; j++)
-            if (pa[i][j] != -1 && pa[i][u] != pa[i][v])
-                u = pa[i][u], v = pa[i][v];
-
+    if(depth[u] < depth[v]) swap(u,v);
+    int diff = depth[u] - depth[v];
+    for(int i=0; i<logmax; i++) if( (diff>>i)&1 ) u = pa[i][u];
+    if(u == v) return u;
+    for(int i=logmax-1; i>=0; i--) if(pa[i][u] != pa[i][v]) {
+        u = pa[i][u];
+        v = pa[i][v];
+    }
     return pa[0][u];
 }
 
@@ -130,7 +123,7 @@ void query_tree(int p, int b, int e, int i, int j){
 
     // Partial Overlap
     query_tree(left(p),b,(b+e)/2,i,j);
-    query_tree(right(p),(b+e)/2+1,e,i,j);
+    query_tree(right(p),(b+e)/2,e,i,j);
     qt[p] = qt[left(p)] > qt[right(p)] ? qt[left(p)] : qt[right(p)];
 }
 
@@ -163,6 +156,7 @@ int query(int a, int b){
     int ans2 = query_up(b, lca);
     if (ans2 > ans1)    ans1 = ans2;
     cout << ans1 << endl;
+    // cout << 1 << endl;
 }
 
 void addEdge(int u, int v, int c, int i){
@@ -213,6 +207,9 @@ int main(){
             for (int j = 0; j < n; j++)
                 if (pa[i][j] != -1)
                     pa[i][j] = pa[i-1][pa[i-1][j]];
+
+        REP(i,0,n) debug(pa[0][i]);
+        REP(i,0,n) debug(depth[i]);
 
         while(1){
             char s[100];

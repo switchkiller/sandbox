@@ -1,5 +1,5 @@
-// F1. Tree of Life (easy)
-
+// A1. Collective Mindsets (easy)
+// Pattern: #puzzle
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -18,41 +18,20 @@ using namespace std;
 #define sqr(x) ((x)*(x))
 #define LSOne(x) x&(-x)
 #define debug(x) cout << #x << " " << x << endl;
-#define N 10005
 
 typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-int n, ans;
-vi g[N];
-
-int dfs(int cur, int p){
-    int cnt = 0;
-    for (int adj:g[cur])
-        if (adj != p){
-            cnt++;
-            ans += dfs(adj,cur);
-        }
-    ans += (cnt * (cnt - 1)) / 2;
-    return cnt;
-}
-
 int main(){
     ios_base::sync_with_stdio(false);
-    // cin.tie(NULL);
+    cin.tie(NULL);
     #ifndef ONLINE_JUDGE
     //  freopen("in.txt" , "r" , stdin);
     //  freopen("out.txt" , "w" , stdout);
     #endif
-    int a, b;
+    ll n;
     cin >> n;
-    REP(i,0,n-1){
-        cin >> a >> b;
-        g[a].pb(b);
-        g[b].pb(a);
-    }
-    dfs(1,-1);
-    cout << ans << endl;
+    cout << (n+1)/2;
     return 0;
 }

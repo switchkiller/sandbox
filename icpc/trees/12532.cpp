@@ -1,6 +1,5 @@
 // 12532 - Interval Product
 // #use of range tree #tricky
-//
 
 #include<bits/stdc++.h>
 

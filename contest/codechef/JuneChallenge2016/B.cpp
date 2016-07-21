@@ -69,7 +69,28 @@ bool Miller(long long p,int iteration){
 
 vector<int> v;
 map<int, bool> p;
+// Intuition - n = p ^ i => i <= log(n) Since p >= 2. So will find nth root using Netwon's formula. Will find if its integer..check prime or not (using rabin-miller)
+// Tags - number theory
+// Difficulty - Easy
 
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define REP(i,a,b) for (int i = (a); i < (b); i++)
+#define RREP(i,a,b) for (int i = (a); i > (b); i--)
+#define FOR(i,a,b) for (int i = (a); i <= (b); i++)
+#define inf 0x3f3f3f3f
+#define all(X) X.begin(), X.end()
+
+bool isint(int x){
+    return (x == (int) x);
+}
+
+int modulo(int a,int b,int c){
+    long long x=1,y=a; // long long is taken to avoid overflow of intermediate results
+    while(b > 0){
 void chefncoin(int n){
     if (n == 0 || n == 1)
         return ;

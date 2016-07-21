@@ -2,6 +2,8 @@
 // #hld
 // #interesting
 
+// Still there is bug in query and updation not done.
+
 #include<bits/stdc++.h>
 
 using namespace std;

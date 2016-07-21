@@ -31,7 +31,7 @@ We can partition the array in one linear scan for a particular pivot element by 
             int firsthigh;    //divider position for the index.
 
             p = high;
-            firsthigh = 1;
+            firsthigh = low;
             for (int i = low; i < high; i++){
               if (s[i] < s[p]){
                 swap(&s[i],&s[firsthigh]);

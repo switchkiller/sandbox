@@ -71,8 +71,6 @@ void update_tree(int p, int b, int e, int i, int j, int type){
     propagate(p,b,e); // propagate when some propagation needed on the way.
     if (i > e || j < b)
         return;
-    if (i <= b && j >= e){ // Total Overlap.
-        imlazy[p] = type;
         propagate(p,b,e);
         return;
     }

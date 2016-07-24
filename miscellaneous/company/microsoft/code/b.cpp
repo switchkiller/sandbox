@@ -13,7 +13,7 @@ int partition(int arr[], int low, int high){
   int pIndex = low;
   for (int i = low; i < high; i++)
     if (arr[i] < arr[p]){
-      swap(&arr[p], &arr[pIndex]);
+      swap(&arr[i], &arr[pIndex]);
       pIndex++;
   }
   swap(&arr[p], &arr[pIndex]);

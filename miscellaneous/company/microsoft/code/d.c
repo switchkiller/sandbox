@@ -2,6 +2,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
+#include<queue>
+using namespace std;
 struct node{
   int data;
   struct node *left;
@@ -63,6 +65,46 @@ bool checkSubtree(struct node *root1, struct node *root2){
   return checkSubtree(root1->left, root2) || checkSubtree(root1->right, root2);
 }
 
+//  Find sum of data of all leaves of a binary tree on same level and then multiply sums obtained of all levels.
+
+bool isLeaf(struct node *root){
+  if (root->left == NULL && root->right == NULL)
+    return true;
+  return false;
+}
+
+int sumnmultiply(struct node *root){
+  if (root == NULL) return 0;
+  int prod = 1;
+  queue<struct node *> q;
+  q.push(root);
+
+  while(1){
+    int nodeCnt = q.size();
+    if (nodeCnt == 0)
+      break;
+    int leafSum = 0;
+    bool leafFound = false;
+
+    while (nodeCnt > 0){
+      struct node *Node = q.front();
+
+      if (isLeaf(Node)){
+        leafFound = true;
+        leafSum += Node->data;
+      }
+      q.pop();
+      if (Node->left != NULL) q.push(Node->left);
+      if (Node->right != NULL) q.push(Node->right);
+      nodeCnt--;
+    }
+
+    if (leafFound == true)
+    prod *= leafSum;
+  }
+
+  return prod;
+}
 
 int main(){
   struct node *root = newNode(1);
@@ -73,7 +115,7 @@ int main(){
   printf("%d\n",maxDepth(root));
   printKth(root, 1, 0);
   printAncestor(root, 5);
-
+  printf("%d\n",sumnmultiply(root));
 
   // Test case for identical trees
   // struct node *T        = newNode(26);

@@ -170,6 +170,55 @@ void printLL(struct node *head){
   }
 }
 
+struct node *mergesort(struct node *a, struct node *b){
+  struct node *result;
+  if (a == NULL) return b;
+  if (b == NULL) return a;
+
+  if (a->data <= b->data){
+    result = a;
+    result->next = mergesort(a->next, b);
+  }
+  else {
+    result = b;
+    result->next = mergesort(a, b->next);
+  }
+  return result;
+}
+
+// Divide the list into two halves. front is head node while back is mid of the
+// LL. In case of odd length the extra node is considered in front
+void midSplit(struct node *headref, struct node **front, struct node **back){
+
+  struct node *slowptr = headref;
+  struct node *fastptr = headref->next;
+
+  while(fastptr->next){
+    fastptr = fastptr->next;
+    if (fastptr->next){
+      slowptr = slowptr->next;
+      fastptr = fastptr->next;
+    }
+  }
+
+  (*front) = headref;
+  (*back) = slowptr->next;
+  slowptr->next = NULL;
+}
+
+void merge(struct node **headref){
+  struct node *head = *headref;
+  struct node *a, *b;
+  if (head == NULL || head->next == NULL) return;
+
+  midSplit(head, &a, &b);
+
+  merge(&a);
+  merge(&b);
+
+  (*headref) = mergesort(a,b);
+}
+
 int main(){
   struct node *head = NULL;
   insertAtEnd(&head,1);
@@ -189,6 +238,9 @@ int main(){
   printLL(head);
   printf("\n");
   rotateLL(&head, 1); // (0<k<n)
+  printLL(head);
+  printf("\nAfter Sorting: \n" );
+  merge(&head);
   printLL(head);
   return 0;
 }

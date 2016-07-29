@@ -1,3 +1,30 @@
+/*-------------------------------------------------------
+                      <Methodology>
+Convert a Binary tree to BST without changing the order.
+
+     10
+    /  \
+   2    7
+  / \
+ 8   4
+
+ to
+
+      8
+    /   \
+   4    10
+  / \
+ 2   7
+
+
+ Steps:
+ 1. Take the inorder traversal I
+ 2. Sort the sequence I
+ 3. Push in the same location after step 2.
+ 
+---------------------------------------------------------*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>

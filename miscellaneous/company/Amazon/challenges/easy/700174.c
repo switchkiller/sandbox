@@ -30,7 +30,7 @@ void leftView(struct node *root, int level, int *max_level){
 
 void leftViewUtil(struct node *root){
     int max_level = 0;
-    leftView(root, 0, &max_level);
+    leftView(root, 1, &max_level);
 }
 
 int main(){

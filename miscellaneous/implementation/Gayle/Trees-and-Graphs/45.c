@@ -4,8 +4,6 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
-#include<stdio.h>
-#include<iostream>
 using namespace std;
 
 struct node {
@@ -43,7 +41,7 @@ int main(){
     root->right->left = newNode(60);
     root->right->right = newNode(80);
 
-    cout << btisbst(root);
+    printf("%d\n", btisbst(root));
     return 0;
 }
 

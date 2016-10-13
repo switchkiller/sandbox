@@ -7,5 +7,5 @@ train = pd.read_csv(train_url)
 test_url = "http://s3.amazonaws.com/assets.datacamp.com/course/Kaggle/test.csv"
 test = pd.read_csv(test_url)
 #Print the `head` of the train and test dataframes
-print(train.describe())
+#print(train.describe())
 print(test.describe())

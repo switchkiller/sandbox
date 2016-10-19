@@ -21,7 +21,7 @@ print(train["Survived"][train["Sex"] == 'male'].value_counts())
 
 # Females that survived vs Females that passed away
 print(train["Survived"][train["Sex"] == 'female'].value_counts())
-    
+
 
 # Normalized male survival
 

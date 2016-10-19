@@ -13,4 +13,4 @@ testing data - test.csv
 
 Use Pandas library
 export PATH=~/anaconda2/bin:$PATH
-- to read the csv 
+- to read the csv

@@ -53,6 +53,7 @@ int main(){
         // if curr_sum is equal to sum print range
         if (curr_sum == sum)
           cout << start << " " <<  j-1 << endl;
+        if (j < n) // keep in mind the extra iteration
         curr_sum += arr[j];
         // debug(curr_sum);
       }

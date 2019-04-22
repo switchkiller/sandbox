@@ -107,19 +107,19 @@ int main(){
       cin >> val[i];
     int MAX_LIMIT = a, ans = 0;
     REP(i,0,n){
+      if (a==0 && b==0) break;
       if (val[i] == 0){
         if (a > 0) a--;
         else if (b > 0) b--;
       }
       else{
-        if (b >= a){
+        if (b > 0){ // or simply if (b > 0 && a < MAX_LIMIT) {a = min (a+1, MAX_LIMIT); b--;}
           if (a == MAX_LIMIT) a--;
           else{ a++; b--;}
         }
-        else {a--;}
+        else a--;
       }
       ans++;
-      if (a==0 && b==0) break;
     }
     cout << ans << endl;
     return 0;

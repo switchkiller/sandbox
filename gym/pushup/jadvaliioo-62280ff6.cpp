@@ -1,9 +1,5 @@
 /* Problem Description:
-  C1 - Increasing Subsequence (easy version)
-  20
-19 20 2 11 16 3 1 12 9 8 18 17 7 15 4 10 6 5 13 14
-15 RLRRRLLLRRLLRLR
-expected: 3 RLR
+
 */
 
 #include <algorithm>
@@ -59,7 +55,26 @@ using namespace std;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
+int n, m;
+char arr[100+1][100+1];
+int cnt;
+int dx[] = {0, 1, 1, 1};
+int dy[] = {1, 1, 0, -1};
+int visited[100+1][100+1];
+string s = "saba";
+int solve(int i, int j, int pos, int x, int y){
+  if (pos == s.length()) return 1;
+  if (i < 0 || i >= n || j < 0 || j >= m) return 0;
+  if (arr[i][j] != s[pos]) return 0;
+  return solve(i+x, j+y, pos+1,x,y);
+}
 
+void solveUtils(){
+  REP(i, 0, n)
+    REP(j,0,m){
+      REP(d,0,4)
+      cnt += solve(i, j, 0, dy[d], dx[d]);}
+}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -67,40 +82,13 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    int n;
-    cin >> n;
-    int arr[n+10];
-    bool vis[n+10];
-    REP(i,0,n){
-      cin >> arr[i];
-    }
-    int moves[n+10];
-    int x = 0;
-    int i = 0, j = n-1;
-    REP(i,0,n+10)
-      vis[i] = false;
-    while (i <= j){
-      if (vis[arr[i]] && vis[arr[j]]){ break;}
-      if (vis[arr[i]]) {  i++; moves[x++] = 0; vis[arr[j]] = true; vis[arr[j] - 1] = true; j--; continue;}
-      if (vis[arr[j]]) {  j--; moves[x++] = 1; vis[arr[i]] = true; vis[arr[i] - 1] = true; i++; continue;}
-        if (arr[i] < arr[j]){
-          vis[arr[i]] = true;
-          vis[arr[i] - 1] = true;
-          moves[x++] = 1;
-          i++;
-        }
-        else{
-          vis[arr[j]] = true;
-          vis[arr[j] - 1] = true;
-          moves[x++] = 0;
-          j--;
-        }
-    }
-    cout << x << endl;
-    REP(i,0,x)
-    if (moves[i] == 1)
-      cout << "L";
-    else cout << "R";
-    cout << endl;
+    cin >> n >> m;
+
+    REP(i, 0, n)
+      REP(j,0,m)
+        cin >> arr[i][j];
+
+    solveUtils();
+    cout << cnt << endl;
     return 0;
  }

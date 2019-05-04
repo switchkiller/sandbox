@@ -1,5 +1,5 @@
 /* Problem Description:
- 1157A - Reachable Numbers
+
 */
 
 #include <algorithm>
@@ -63,18 +63,26 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    string val;
-    int cnt = 0;
-    cin >> val;
-    if (val.length() == 1){
-      cout << "9" << endl;
-      return 0;
+    int n;
+    while (1){
+      cin >> n;
+      if (n == 0) break;
+      int cnt = 0;
+      for (int j = 1234; j <= 98765/n; j++ ){
+        int i = j * n;
+        int flag = (j < 10000);
+        int temp;
+        temp = i;
+        while (temp){ flag |= 1 << (temp % 10); temp /= 10;}
+        temp = j;
+        while (temp){ flag |= 1 << (temp % 10); temp /= 10;}
+        if (flag == (1 << 10) - 1){
+          cnt++;
+          printf("%0.5d / %0.5d = %d\n", i,j,n);
+        }
+      }
+      if (cnt == 0) printf("There are no solutions for %d.\n",n );
+      printf("\n");
     }
-    for(int i = val.length()-1; i >= 0; i--){
-      if (i == 0) cnt += 9;
-      else cnt += 9 - (val[i]-48);
-    }
-    cnt += 1;
-    cout << cnt << endl;
     return 0;
  }

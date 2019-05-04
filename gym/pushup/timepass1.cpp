@@ -1,5 +1,5 @@
 /* Problem Description:
- 1157A - Reachable Numbers
+
 */
 
 #include <algorithm>
@@ -56,6 +56,8 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
+const int MOD = 1e9 + 7;
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -63,18 +65,13 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    string val;
-    int cnt = 0;
-    cin >> val;
-    if (val.length() == 1){
-      cout << "9" << endl;
-      return 0;
+    int t;
+    cin >> t;
+    while (t--){
+      ll int n, ans = 0;
+      cin >> n;
+      ans = ((n % MOD)*(n % MOD) ) % MOD;
+      cout << ans << endl;
     }
-    for(int i = val.length()-1; i >= 0; i--){
-      if (i == 0) cnt += 9;
-      else cnt += 9 - (val[i]-48);
-    }
-    cnt += 1;
-    cout << cnt << endl;
     return 0;
  }

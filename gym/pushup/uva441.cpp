@@ -1,5 +1,5 @@
 /* Problem Description:
- 1157A - Reachable Numbers
+
 */
 
 #include <algorithm>
@@ -63,18 +63,19 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    string val;
-    int cnt = 0;
-    cin >> val;
-    if (val.length() == 1){
-      cout << "9" << endl;
-      return 0;
+    int kx;
+    while(1){
+      cin >> kx;
+      if (kx == 0) break;
+      int arr[kx];
+      REP(i,0,kx)  cin >> arr[i];
+      for (int i = 0; i < kx-5; i++)
+        for(int j = i + 1; j < kx-4; j++)
+          for(int k = j + 1; k < kx-3; k++)
+            for(int l = k + 1; l < kx-2; l++)
+              for(int m = l + 1; m < kx-1; m++)
+                for(int n = m + 1; n < kx; n++)
+                  cout << arr[i] << " " << arr[j] << " " << arr[k] << " " << arr[l] << " "  << arr[m] << " " << arr[n] << endl;
     }
-    for(int i = val.length()-1; i >= 0; i--){
-      if (i == 0) cnt += 9;
-      else cnt += 9 - (val[i]-48);
-    }
-    cnt += 1;
-    cout << cnt << endl;
     return 0;
  }

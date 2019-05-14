@@ -56,27 +56,32 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
+const int m = 1000001;
+bool bs[m];
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     #ifndef ONLINE_JUDGE
    //  freopen("in" , "r" , stdin);
-    freopen("out" , "w" , stdout);
+   //  freopen("out" , "w" , stdout);
     #endif
-    int kx;
-    while(1){
-      cin >> kx;
-      if (kx == 0) break;
-      int arr[kx];
-      REP(i,0,kx)  cin >> arr[i];
-      for (int i = 0; i < kx-5; i++)
-        for(int j = i + 1; j < kx-4; j++)
-          for(int k = j + 1; k < kx-3; k++)
-            for(int l = k + 1; l < kx-2; l++)
-              for(int m = l + 1; m < kx-1; m++)
-                for(int n = m + 1; n < kx; n++)
-                  cout << arr[i] << " " << arr[j] << " " << arr[k] << " " << arr[l] << " "  << arr[m] << " " << arr[n] << endl;
-      cout << endl;
+    int n;
+    cin >> n;
+    int arr[m];
+    REP(i,0,n){
+      cin >> arr[i];
+      if (bs[arr[i]] == 0)
+        bs[arr[i]] = 1;
     }
+
+    sort(arr, arr+n);
+    int cnt = 0;
+    for(int i = i; i < n; i++){
+        if (bs[arr[i]] == 1 && arr[i] >= (i+1)){
+          bs[arr[i]] = 0;
+          cnt++;
+        }
+    }
+    cout << cnt << endl;
     return 0;
  }

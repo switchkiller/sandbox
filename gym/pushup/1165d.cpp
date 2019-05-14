@@ -56,27 +56,45 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
+long divSum(int num)
+{
+    long result = 0;
+    for (int i=2; i<=sqrt(num); i++)
+    {
+        if (num%i==0)
+        {
+            if (i==(num/i))
+                result += i;
+            else
+                result += (i + num/i);
+        }
+    }
+    return (result + 1);
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     #ifndef ONLINE_JUDGE
    //  freopen("in" , "r" , stdin);
-    freopen("out" , "w" , stdout);
+   //  freopen("out" , "w" , stdout);
     #endif
-    int kx;
-    while(1){
-      cin >> kx;
-      if (kx == 0) break;
-      int arr[kx];
-      REP(i,0,kx)  cin >> arr[i];
-      for (int i = 0; i < kx-5; i++)
-        for(int j = i + 1; j < kx-4; j++)
-          for(int k = j + 1; k < kx-3; k++)
-            for(int l = k + 1; l < kx-2; l++)
-              for(int m = l + 1; m < kx-1; m++)
-                for(int n = m + 1; n < kx; n++)
-                  cout << arr[i] << " " << arr[j] << " " << arr[k] << " " << arr[l] << " "  << arr[m] << " " << arr[n] << endl;
-      cout << endl;
+    int t;
+    cin >> t;
+    while(t--){
+      int n;
+      cin >> n;
+      int x;
+      int max = -inf;
+      long sum = 0;
+      REP(i,0,n){
+        cin >> x;
+        sum += x;
+        if (max < x) max = x;
     }
+    if (sum+1 == divSum(max*2))
+      cout << max * 2 << endl;
+    else cout << "-1" << endl;
+  }
     return 0;
  }

@@ -61,22 +61,28 @@ int main(){
     cin.tie(NULL);
     #ifndef ONLINE_JUDGE
    //  freopen("in" , "r" , stdin);
-    freopen("out" , "w" , stdout);
+   //  freopen("out" , "w" , stdout);
     #endif
-    int kx;
-    while(1){
-      cin >> kx;
-      if (kx == 0) break;
-      int arr[kx];
-      REP(i,0,kx)  cin >> arr[i];
-      for (int i = 0; i < kx-5; i++)
-        for(int j = i + 1; j < kx-4; j++)
-          for(int k = j + 1; k < kx-3; k++)
-            for(int l = k + 1; l < kx-2; l++)
-              for(int m = l + 1; m < kx-1; m++)
-                for(int n = m + 1; n < kx; n++)
-                  cout << arr[i] << " " << arr[j] << " " << arr[k] << " " << arr[l] << " "  << arr[m] << " " << arr[n] << endl;
-      cout << endl;
+    int n;   string s;
+    cin >> n;
+    cin >> s;
+    string res;
+    int i = 0;
+    while(i < n){
+      res += s[i];
+      if (i % 2 == 0)
+        while (s[i] == s[i+1]) i++;
+      i++;
     }
+    int rlength = res.length();
+    if (rlength == 1) {
+      cout << n << endl;
+      return 0;
+    }
+    if (rlength % 2 == 1) {
+      rlength--;
+    }
+    cout << n - rlength << endl;
+    cout << res.substr(0,rlength) << endl;
     return 0;
- }
+}

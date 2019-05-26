@@ -1,5 +1,5 @@
 /* Problem Description:
-
+  binary-search #AC
 */
 
 #include <algorithm>
@@ -55,9 +55,14 @@ using namespace std;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
+const int N = 1e5;
+long arr[N], mx = -inf;
+bool check(int mid, ll k, int n){
+  ll cnt = 0;
+  REP(i,0,n)  cnt += arr[i]/mid;
+  return (cnt >= k);
+}
 
-const int m = 1000001;
-bool bs[m];
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -66,23 +71,21 @@ int main(){
    //  freopen("out" , "w" , stdout);
     #endif
     int n;
-    cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
-    REP(i,0,n){
+    ll k;
+    cin >> n >> k;
+    REP(i,0,n) {
       cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
-      }
+      mx = max(mx, arr[i]);
     }
 
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
+    int low = 0, high = mx;
+    while (low < high){
+      // cout << low << high << endl;
+      int mid = (low+high+1)/2;
+      if (check(mid,k,n)) low = mid;
+      else high = mid-1;
     }
-    cout << cnt << endl;
+    cout << low << endl;
+
     return 0;
  }

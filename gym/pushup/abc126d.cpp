@@ -55,9 +55,23 @@ using namespace std;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
+const int N = 1e5;
+vector< pair<int, long> > grp[N];
 
-const int m = 1000001;
-bool bs[m];
+bool col[N];
+void dfs(int cur, int p){
+  for (vector< pair<int, long> >::iterator adj = grp[cur].begin(); adj != grp[cur].end(); adj++){
+    if (adj->first != p){
+        if (adj->second % 2 == 1)
+          col[adj->first] = !(col[cur]);
+        else col[adj->first] = col[cur];
+        dfs(adj->first, cur);
+    }
+  }
+  return;
+}
+
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -67,22 +81,19 @@ int main(){
     #endif
     int n;
     cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
+    REP(i,0,n-1){
+      int u,v; long w;
+      cin >> u >> v >> w;
+      u--, v--;
+      grp[u].pb(mp(v,w));
+      grp[v].pb(mp(u,w));
+    }
+    int cur = 0;
+    col[0] = true;
+    dfs(0,-1);
     REP(i,0,n){
-      cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
-      }
+      if (col[i]) cout << "0"<<endl;
+      else cout << "1" << endl;
     }
-
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
-    }
-    cout << cnt << endl;
     return 0;
  }

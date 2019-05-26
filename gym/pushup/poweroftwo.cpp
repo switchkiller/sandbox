@@ -59,12 +59,6 @@ int main(){
 			ans++;
 			mp[need]--;
 		}
-    else if (need == arr[i]){
-      if (mp[0] > 0){
-        ans++;
-        mp[0]--;
-      }
-    }
 	}
 	cout << ans;
 	return 0;

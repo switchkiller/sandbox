@@ -1,5 +1,5 @@
 /* Problem Description:
-
+  Building Permutation
 */
 
 #include <algorithm>
@@ -56,8 +56,6 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-const int m = 1000001;
-bool bs[m];
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -67,22 +65,13 @@ int main(){
     #endif
     int n;
     cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
+    ll arr[n];
+    REP(i,0,n)  cin >> arr[i];
+    sort(arr,arr+n);
+    ll ans = 0;
     REP(i,0,n){
-      cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
-      }
+      ans += abs(arr[i]-(i+1));
     }
-
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
-    }
-    cout << cnt << endl;
+    cout << ans << endl;
     return 0;
  }

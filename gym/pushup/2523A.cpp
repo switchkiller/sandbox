@@ -56,8 +56,6 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-const int m = 1000001;
-bool bs[m];
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -65,24 +63,17 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    int n;
-    cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
-    REP(i,0,n){
-      cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
-      }
+    int n, m;
+    cin >> n >> m;
+    string s;
+    if (n <= m){
+      REP(i,0,n) s += "GB";
+      REP(i,0,m-n) s+= "G";
     }
-
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
+    else {
+      REP(i,0,m) s += "BG";
+      REP(i,0,n-m) s+= "B";
     }
-    cout << cnt << endl;
+    cout << s << endl;
     return 0;
  }

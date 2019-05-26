@@ -56,8 +56,19 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-const int m = 1000001;
-bool bs[m];
+const int N = 1e5;
+
+vi grp[N];
+bool visited[N];
+void dfs(int cur){
+  for (vi::iterator adj = grp[cur].begin(); adj != grp[cur].end(); adj++){
+    if (!visited[*adj]){
+      visited[*adj] = true;
+      dfs(*adj);
+    }
+  }
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -65,24 +76,23 @@ int main(){
    //  freopen("in" , "r" , stdin);
    //  freopen("out" , "w" , stdout);
     #endif
-    int n;
-    cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
+    int n, k;
+    cin >> n >> k;
+    REP(i,0,k){
+      int u,v,w;
+      cin >> u >> v >> w;
+      u--, v--;
+      grp[u].pb(v);
+      grp[v].pb(u);
+    }
+    int count = 0;
     REP(i,0,n){
-      cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
+      if (!visited[i]){
+        visited[i] = true;
+        dfs(i);
+        count++;
       }
     }
-
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
-    }
-    cout << cnt << endl;
+    cout << count << endl;
     return 0;
  }

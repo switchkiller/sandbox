@@ -36,7 +36,6 @@
 #include <vector>
 
 using namespace std;
-
 #define REP(i,a,b) for (int i = (a); i < (b); i++)
 #define RREP(i,a,b) for (int i = (a); i > (b); i--)
 #define FOR(i,a,b) for (int i = (a); i <= (b); i++)
@@ -56,33 +55,16 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-const int m = 1000001;
-bool bs[m];
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    #ifndef ONLINE_JUDGE
-   //  freopen("in" , "r" , stdin);
-   //  freopen("out" , "w" , stdout);
-    #endif
-    int n;
-    cin >> n;
-    int arr[n];
-    int temp[n];
-    int x = 0;
-    REP(i,0,n){
-      cin >> arr[i];
-      if (bs[arr[i]] == 0){
-        bs[arr[i]] = 1;
-        temp[x++] = arr[i];
-      }
-    }
 
-    sort(temp, temp+x);
-    int cnt = 0;
-    REP(i,0,x){
-      if (temp[i] >= (i+1)) cnt++;
-    }
-    cout << cnt << endl;
-    return 0;
- }
+int main(void){
+  int n,k,a;
+  cin>>n>>k;
+  long double p=0;
+  for(int i=1;i<=n&&i<k;i++){
+    a=floor(log(k/i)/log(2.0))+1;
+    p+=1/(pow(2.0,a)*n);
+  }
+  if(n>k-1)p+=(n-k+1)/n;
+  cout<<p;
+  return 0;
+}

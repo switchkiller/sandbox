@@ -4,7 +4,7 @@
 class Solution {
 public:
     bool visited[10];
-    bool visiting[10];
+    bool visiting[10];2222211111
 
     bool dfs(int cur, vector<vector<int>>& prerequisites){
         if (visited[cur] == true) return true;

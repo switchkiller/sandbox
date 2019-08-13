@@ -1,5 +1,5 @@
 /* Problem Description:
-
+  Improvement can be done, Current implementation has run time complexity O(N*N). With binary search, it can be reduced to O(NlogN).
 */
 
 #include <algorithm>

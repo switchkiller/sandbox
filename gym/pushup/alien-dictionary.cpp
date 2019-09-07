@@ -33,14 +33,17 @@ public:
                 //do something
                 int x = 0;
                 while(current_word[x] == prev_word[x]) x++;
-                if (x == current_word.length() && x == prev_word.length()){
+                if (x == current_word.length() && x <= prev_word.length()){
                     // Invalid case
-
+                    return "";
                 }
-                else if(){
+                else if(x == prev_word.length() && x < current_word.length()){
                     // do something
+                    graph[prev_word[x-1]-97].push_back(current_word[x]-97);
                 }
-                graph[prev_word[x]-97].push_back(current_word[x]-97);
+                else {
+                    graph[prev_word[x]-97].push_back(current_word[x]-97);
+                }
             } else{
                 start = current_word[0]-97;
             }

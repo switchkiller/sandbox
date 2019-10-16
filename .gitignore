@@ -9,6 +9,7 @@
 !*.cpp
 !*.java
 !*.py
+*.exec
 
 # Packages #
 ############

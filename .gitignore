@@ -6,7 +6,9 @@
 *.exe
 *.o
 *.so
-!*.+
+!*.cpp
+!*.java
+!*.py
 
 # Packages #
 ############

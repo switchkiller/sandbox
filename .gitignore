@@ -31,3 +31,9 @@
 *.exe
 *.out
 *.app
+
+#New rule
+
+!*.*
+
+!*/

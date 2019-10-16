@@ -1,6 +1,0 @@
-To test if the large number is prime number or not, apply Rabin-Miller Strong Pseudoprime Test.
-In fact if we place {2,7,61} instead of the first 8 prime numbers {2,3,5,7,11,13,17,19} -> we have prime number test for upto 3.(10^14) numbers.
-Time complexity:
-Average case: 100 steps.
-Worst case: 200 steps.
-  

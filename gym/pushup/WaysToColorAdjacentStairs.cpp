@@ -1,3 +1,7 @@
+/* Problem Description:
+
+*/
+
 #include <algorithm>
 #include <bitset>
 #include <complex>
@@ -52,26 +56,20 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-int findMin(int arr[], int low, int high){
-  if (low <= high){
-    int mid = (low+high)/2;
-    if ((mid == low || arr[mid] < arr[mid-1]) && (mid == high || arr[mid] < arr[mid+1]) )return mid;
-    if (arr[high] > arr[mid])
-      return findMin(arr,low,mid-1);
-    return findMin(arr,mid+1,high);
-  }
-  return -1;
-}
-
 int main(){
   int n;
   cin >> n;
-  int arr[n];
-  for(int i = 0; i < n; i++)
-    cin >> arr[i];
-  int res = findMin(arr,0,n-1);
 
-  cout << res;
+  int dp[n][2];
+  dp[0][0] = 1;
+  dp[0][1] = 1;
+
+  for(int i = 1; i < n; i++){
+    dp[i][0] = dp[i-1][0] + dp[i-1][1];
+    dp[i][1] = dp[i-1][0];
+  }
+
+  cout << dp[n-1][0] + dp[n-1][1];
 
   return 0;
 }
